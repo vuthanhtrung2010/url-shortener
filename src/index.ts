@@ -1,8 +1,9 @@
 import express from "express";
+import { config } from 'dotenv';
 const app = express();
+config()
 
-require("dotenv").config();
-const port = 80;
+const port = process.env.port;
 
 import { Request } from "express";
 import * as Sentry from "@sentry/node";

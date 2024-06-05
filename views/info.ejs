@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- HTML Meta Tags -->
+        <title>Redirect: <%= data.path %></title>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="/assets/favicon.ico">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+        <!-- Scripts -->
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+    <body class="p-8 m-auto bg-zinc-900 text-white">
+        <header class="mb-4">
+            <h1 class="text-2xl font-bold">Redirect Information</h1>
+        </header>
+
+        <p><span class="font-semibold">Path</span>: <a class="text-blue-500 hover:text-blue-600" href="/<%= data.path %>">/<%= data.path %></a></p>
+        <p><span class="font-semibold">Redirect</span>: <a class="text-blue-500 hover:text-blue-600" href="<%= data.redirect %>"><%= data.redirect %></a></p>
+        <p"><span class="font-semibold">Redirect Path</span>: <% if(data.redirect_path) { %>✅<% } else { %>❌<% } %></p>
+        <p"><span class="font-semibold">Created</span>: <%= moment.unix(data.created / 1000).format("Do MMMM YYYY, h:mma") %></p>
+        <p"><span class="font-semibold">Hits</span>: <%= data.hits %></p>
+    </body>
+</html>

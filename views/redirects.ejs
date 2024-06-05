@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- HTML Meta Tags -->
+        <title>Redirects</title>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="/assets/favicon.ico">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+        <!-- Scripts -->
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+    <body class="bg-gray-800 text-white">
+        <div class="relative overflow-x-auto">
+            <table id="redirects" class="w-full text-sm text-left text-gray-400">
+                <thead class="text-xs uppercase bg-gray-900 text-gray-400">
+                    <th scope="col" class="px-4 py-3 outline outline-1 outline-gray-700">Path</th>
+                    <th scope="col" class="px-4 py-3 outline outline-1 outline-gray-700">Redirect</th>
+                    <th scope="col" class="px-4 py-3 outline outline-1 outline-gray-700">Redirect Path</th>
+                </thead>
+
+                <tbody id="redirects-body"></tbody>
+            </table>
+        </div>
+    </body>
+
+    <script>document.title = `Redirects | ${location.host}`;</script>
+
+    <script>
+        const tableBody = document.getElementById("redirects-body");
+
+        function loadRedirects() {
+            fetch(`/api/redirects`, {
+                method: "GET"
+            }).then(res => res.json()).then(data => {
+                data.sort((a, b) => a.path.localeCompare(b.path));
+
+                data.forEach(redirect => {
+                    let row = tableBody.insertRow(-1);
+
+                    let c1 = row.insertCell(0);
+                    let c2 = row.insertCell(1);
+                    let c3 = row.insertCell(2);
+
+                    c1.classList = "px-4 py-2 outline outline-1 outline-gray-700";
+                    c2.classList = "px-4 py-2 outline outline-1 outline-gray-700";
+                    c3.classList = "px-4 py-2 outline outline-1 outline-gray-700 text-center";
+
+                    const icon = {
+                        false: "fa-solid fa-x text-red-600",
+                        true: "fa-solid fa-check text-green-600"
+                    }
+
+                    c1.innerHTML = `<a href="/${redirect.path}" class="font-semibold text-blue-600 hover:text-blue-700">/${redirect.path}</a>`;
+                    c2.innerHTML = `<a href="${redirect.redirect}" class="text-gray-400 underline underline-2 hover:no-underline">${redirect.redirect}</a>`;
+                    c3.innerHTML = `<i class="${icon[redirect.redirect_path]}"></i>`;
+                })
+            })
+        }
+
+        loadRedirects();
+    </script>
+</html>

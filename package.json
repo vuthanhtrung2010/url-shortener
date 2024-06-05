@@ -1,0 +1,38 @@
+{
+  "name": "url-shortener",
+  "version": "2.0.2",
+  "description": "An ultra-fast URL Shortener made in Node.js using a database.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "npm run build && node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wdhdev/url-shortener.git"
+  },
+  "author": "Trung",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wdhdev/url-shortener/issues"
+  },
+  "homepage": "https://links.trung.is-a.dev",
+  "dependencies": {
+    "@sentry/node": "^7.81.0",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
+    "mongoose": "^8.0.1"
+  },
+  "devDependencies": {
+    "@sentry/types": "^7.74.1",
+    "@types/body-parser": "^1.19.5",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.2"
+  }
+}

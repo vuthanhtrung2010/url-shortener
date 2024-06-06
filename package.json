@@ -1,10 +1,12 @@
 {
-  "name": "",
+  "name": "url-shortener",
   "private": true,
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "remix vite:build",
+    "build:compile": "remix vite:build",
+    "build:database": "prisma migrate dev --name init",
+    "build": "npm-run-all build:compile build:database",
     "dev": "remix vite:dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "remix-serve ./build/server/index.js",
@@ -19,6 +21,7 @@
     "dotenv": "^16.4.5",
     "isbot": "^4.1.0",
     "moment": "^2.30.1",
+    "npm-run-all2": "^6.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tiny-invariant": "^1.3.3"

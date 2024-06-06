@@ -1,17 +1,32 @@
 {
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/.server/**/*.ts",
+    "**/.server/**/*.tsx",
+    "**/.client/**/*.ts",
+    "**/.client/**/*.tsx"
+  ],
   "compilerOptions": {
-    "allowJs": true,
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "types": ["@remix-run/node", "vite/client"],
+    "isolatedModules": true,
     "esModuleInterop": true,
-    "lib": ["ES6"],
-    "module": "CommonJS",
-    "noImplicitAny": true,
-    "outDir": "dist",
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
-    "rootDir": "src",
+    "target": "ES2022",
+    "strict": true,
+    "allowJs": true,
     "skipLibCheck": true,
-    "strict": false,
-    "target": "ES2020",
-    "typeRoots": ["typings/"]
-  },
-  "include": ["src/", "typings/"]
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./app/*"]
+    },
+
+    // Vite takes care of building everything, not tsc.
+    "noEmit": true
+  }
 }

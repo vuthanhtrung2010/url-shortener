@@ -1,15 +1,36 @@
-# URL Shortener
+# Welcome to Remix + Vite!
 
-An ultra-fast URL Shortener made in Node.js using a database.
+📖 See the [Remix docs](https://remix.run/docs) and the [Remix Vite docs](https://remix.run/docs/en/main/guides/vite) for details on supported features.
 
-**Backend**
+## Development
 
-![Backend](https://skillicons.dev/icons?i=nodejs,ts,express,mongodb,sentry)
+Run the Vite dev server:
 
-**Frontend**
+```shellscript
+npm run dev
+```
 
-![Frontend](https://skillicons.dev/icons?i=html,tailwind,js)
+## Deployment
 
-## Live Preview
+First, build your app for production:
 
-A live, hosted preview of this URL shortener can be found [here](https://links.trung.is-a.dev).
+```sh
+npm run build
+```
+
+Then run the app in production mode:
+
+```sh
+npm start
+```
+
+Now you'll need to pick a host to deploy it to.
+
+### DIY
+
+If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
+
+Make sure to deploy the output of `npm run build`
+
+- `build/server`
+- `build/client`

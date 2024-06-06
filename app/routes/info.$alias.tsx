@@ -1,10 +1,9 @@
 import { json, redirect, type LoaderFunctionArgs } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+import { useLoaderData, Link } from "@remix-run/react";
 import chalk from "chalk";
 import moment from "moment";
 import invariant from "tiny-invariant";
 import { getData } from "~/data";
-import { Link } from "@remix-run/react";
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   invariant(params.alias, "Missing contactId param");

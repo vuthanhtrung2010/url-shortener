@@ -76,7 +76,7 @@ export default function Index() {
           </div>
           <div className="flex flex-col py-4 px-6">
             <h3 className="text-xl text-primaryText text-center sm:text-center md:text-left">Discord Server</h3>
-            <span className="text-base text-secondaryText pt-1 text-center sm:text-center md:text-left">Mystic Support</span>
+            <span className="text-base text-secondaryText pt-1 text-center sm:text-center md:text-left">Trung Development</span>
           </div>
         </Link>
 

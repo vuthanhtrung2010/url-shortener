@@ -43,7 +43,7 @@ export default function Index() {
           </div>
           <div className="flex flex-col py-4 px-6">
             <h3 className="text-xl text-primaryText text-center sm:text-center md:text-left">Developer Website</h3>
-            <span className="text-base text-secondaryText pt-1 text-center sm:text-center md:text-left">info.trung.is-a.dev</span>
+            <span className="text-base text-secondaryText pt-1 text-center sm:text-center md:text-left">trung.is-a.dev</span>
           </div>
         </Link>
 

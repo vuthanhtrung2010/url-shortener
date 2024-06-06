@@ -1,9 +1,16 @@
 import { json, redirect, type LoaderFunctionArgs } from "@remix-run/node";
-import { useLoaderData, Link } from "@remix-run/react";
+import { useLoaderData, Link, MetaFunction } from "@remix-run/react";
 import chalk from "chalk";
 import moment from "moment";
 import invariant from "tiny-invariant";
 import { getData } from "~/data";
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "Info for links" },
+    { name: "description", content: "Welcome to my URL Shortener" },
+  ];
+};
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   invariant(params.alias, "Missing contactId param");

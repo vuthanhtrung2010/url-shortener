@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { Form } from "@remix-run/react";
+import { Form, MetaFunction } from "@remix-run/react";
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "Dashboard" },
+    { name: "description", content: "Welcome to my URL Shortener" },
+  ];
+};
 
 export default function Dashboard() {
   const [isCreateShown, setCreateShown] = useState(false);

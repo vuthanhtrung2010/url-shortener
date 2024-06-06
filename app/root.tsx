@@ -5,7 +5,17 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import './styles.css';
+import appStylesHref from './styles.css';
+import { LinksFunction } from "@remix-run/node";
+
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: appStylesHref },
+  {
+    rel: "icon",
+    href: "/favicon.ico",
+    type: "image/x-icon",
+  },
+];
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (

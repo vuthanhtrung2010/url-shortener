@@ -5,11 +5,10 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import appStylesHref from './styles.css';
+import './styles.css';
 import { LinksFunction } from "@remix-run/node";
 
 export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: appStylesHref },
   {
     rel: "icon",
     href: "/favicon.ico",

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Form, MetaFunction } from "@remix-run/react";
+import chalk from "chalk";
 
 export const meta: MetaFunction = () => {
   return [
@@ -13,6 +14,7 @@ export default function Dashboard() {
   const [isUpdateShown, setUpdateShown] = useState(false);
   const [isDeleteShown, setDeleteShown] = useState(false);
   const [message, setMessage] = useState("");
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleFormSubmit = async (
     event: React.FormEvent<HTMLFormElement>,
@@ -24,32 +26,46 @@ export default function Dashboard() {
     const form = event.currentTarget;
     const formData = new FormData(form);
     const submitButton = form.querySelector("button[type='submit']");
-
+  
     if (submitButton) {
       submitButton.setAttribute("disabled", "true");
       submitButton.textContent = `${method.charAt(0).toUpperCase() + method.slice(1)}ing...`;
     }
-
+  
     const response = await fetch(url, {
       method,
       body: formData,
-    });
-
-    const result = await response.json();
-
+    }); 
+  
+    let result;
+    let responseOk = response.ok;
+    
+    try {
+      result = await response.json();
+    } catch (error) {
+      console.log(chalk.red(error))
+      responseOk = false;
+      result = { message: "An error occurred. Please try again later." };
+    }
+  
     if (submitButton) {
       submitButton.removeAttribute("disabled");
       submitButton.textContent = "Submit";
     }
-
-    if (response.ok) {
+  
+    if (responseOk) {
       setMessage(successMessage);
+      setShowSuccess(true);
       form.reset();
     } else {
       setMessage(result.message);
+      setShowSuccess(false); // Set showSuccess to false for failure cases
     }
-
-    setTimeout(() => setMessage(""), 2500);
+  
+    setTimeout(() => {
+      setMessage("");
+      setShowSuccess(false);
+    }, 2500);
   };
 
   const toggleForm = (formType: "create" | "update" | "delete") => {
@@ -193,9 +209,8 @@ export default function Dashboard() {
           )}
         </div>
         {message && (
-          <div
-            className={`mt-4 p-4 ${message.includes("successfully") ? "bg-green-600" : "bg-red-600"} text-white rounded-lg`}
-          >
+          <div className={`mt-4 p-4 ${showSuccess ? "bg-green-600" : "bg-red-600"} text-white rounded-lg`}>
+            {showSuccess && <img src="/checkmark.svg" alt="Success" className="inline-block mr-2" />}
             {message}
           </div>
         )}

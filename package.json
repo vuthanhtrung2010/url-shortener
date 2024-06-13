@@ -9,7 +9,7 @@
     "build": "npm-run-all build:compile build:database",
     "dev": "remix vite:dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
-    "start": "PORT=${process.env.PORT:-3000} remix-serve ./build/server/index.js",
+    "start": "remix-serve ./build/server/index.js",
     "typecheck": "tsc"
   },
   "dependencies": {

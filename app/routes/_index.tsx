@@ -25,24 +25,14 @@ export default function Index() {
 
       {/* Links */}
       <section id="links" className="w-10/12 flex flex-col mx-auto mb-10 mt-1 md:w-8/12 lg:w-4/12">
-        {/* Websites */}
-        <Link to="/website" id="website" className="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-link hover:bg-backgroundAccentLighter mx-auto sm:mx-auto md:mx-0">
-          <div className="py-2 px-2 hidden md:flex">
-            <img src="/assets/links/website.png" className="rounded-website h-20 w-20 hidden sm:hidden md:inline" alt="Website" />
-          </div>
-          <div className="flex flex-col py-4 px-6">
-            <h3 className="text-xl text-primaryText text-center sm:text-center md:text-left">Personal Website</h3>
-            <span className="text-base text-secondaryText pt-1 text-center sm:text-center md:text-left">info.trung.is-a.dev</span>
-          </div>
-        </Link>
 
-        {/* Developer website */}
-        <Link to="/dev" id="dev" className="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-link hover:bg-backgroundAccentLighter mx-auto sm:mx-auto md:mx-0">
+        {/* Personal website */}
+        <Link to="/website" id="dev" className="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-link hover:bg-backgroundAccentLighter mx-auto sm:mx-auto md:mx-0">
           <div className="py-2 px-2 hidden md:flex">
             <img src="/assets/links/dev.png" className="rounded-website h-20 w-20 hidden sm:hidden md:inline" alt="Developer Website" />
           </div>
           <div className="flex flex-col py-4 px-6">
-            <h3 className="text-xl text-primaryText text-center sm:text-center md:text-left">Developer Website</h3>
+            <h3 className="text-xl text-primaryText text-center sm:text-center md:text-left">Personal Website</h3>
             <span className="text-base text-secondaryText pt-1 text-center sm:text-center md:text-left">trung.is-a.dev</span>
           </div>
         </Link>

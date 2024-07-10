@@ -1,6 +1,7 @@
 import {
   Links,
   Meta,
+  MetaFunction,
   Outlet,
   Scripts,
   ScrollRestoration,
@@ -16,12 +17,47 @@ export const links: LinksFunction = () => [
   },
 ];
 
+export const meta: MetaFunction = () => {
+  return [
+    { title: "Trung's Spotify Status" },
+    {
+      property: "og:title",
+      content: "Trung's URL Shortener",
+    },
+    {
+      name: "description",
+      content: "A website which displays all my shorten links.",
+    },
+    {
+      name: "viewport",
+      content: "width=device-width, initial-scale=1",
+    },
+    // {
+    //   property: "og:image",
+    //   content: "/assets/banner.png",
+    // },
+    {
+      name: "twitter:title",
+      content: "Trung's URL Shortener"
+    },
+    {
+      name: "twitter:card",
+      content: "summary_large_image"
+    },
+    {
+      name: "twitter:description",
+      content: "A website which displays all my shorten links."
+    },
+    {
+      charset: "UTF-8",
+    },
+  ];
+};
+
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="h-full">
       <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
       </head>

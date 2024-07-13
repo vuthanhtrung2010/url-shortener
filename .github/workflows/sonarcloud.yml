@@ -47,7 +47,7 @@ jobs:
 
         # You can pin the exact commit or the version.
         # uses: SonarSource/sonarcloud-github-action@v2.2.0
-        uses: SonarSource/sonarcloud-github-action@e44258b109568baa0df60ed515909fc6c72cba92
+        uses: SonarSource/sonarcloud-github-action@b7cc8bf2004f4a9ef190137d8831630e9ae5d2e7
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   # Generate a token on Sonarcloud.io, add it to the secrets of this repo with the name SONAR_TOKEN (Settings > Secrets > Actions > add new repository secret)
         with:
@@ -55,8 +55,8 @@ jobs:
           args:
             # Unique keys of your project and organization. You can find them in SonarCloud > Information (bottom-left menu)
             # mandatory
-            -Dsonar.projectKey="vuthanhtrung2010_url-shortener"
-            -Dsonar.organization="vuthanhtrung2010"
+            -Dsonar.projectKey=vuthanhtrung2010_url-shortener
+            -Dsonar.organization=vuthanhtrung2010
             # Comma-separated paths to directories containing main source files.
             #-Dsonar.sources= # optional, default is project base directory
             # Comma-separated paths to directories containing test source files.

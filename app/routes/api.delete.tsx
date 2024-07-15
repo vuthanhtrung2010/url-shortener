@@ -6,6 +6,13 @@ export const action: ActionFunction = async ({ request }) => {
   const password = formData.get("password") as string;
   const alias = formData.get("alias") as string;
 
+  if (!process.env.password) {
+    return json(
+      { success: false, message: "No password provided in environment variables." },
+      { status: 401 }
+    );
+  }
+  
   if (password !== process.env.password) {
     return json(
       { success: false, message: "Invalid password" },

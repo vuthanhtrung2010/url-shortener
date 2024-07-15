@@ -8,16 +8,25 @@ export const action: ActionFunction = async ({ request }) => {
   const url = formData.get("url") as string;
 
   if (password !== process.env.password) {
-    return json({ success: false, message: "Invalid password" }, { status: 401 });
+    return json(
+      { success: false, message: "Invalid password" },
+      { status: 401 }
+    );
   }
 
-  const mapped_alias: string[] = alias.split(" ").map(a => a.trim()).filter(a => a);
+  const mapped_alias: string[] = alias
+    .split(" ")
+    .map((a) => a.trim())
+    .filter((a) => a);
 
   try {
     await update_redirect(url, mapped_alias);
     return json({ success: true, message: "Redirect updated successfully" });
   } catch (error) {
-    return json({ success: false, message: (error as Error).message }, { status: 500 });
+    return json(
+      { success: false, message: (error as Error).message },
+      { status: 500 }
+    );
   }
 };
 

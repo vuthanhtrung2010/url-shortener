@@ -26,33 +26,35 @@ export default function Dashboard() {
     const form = event.currentTarget;
     const formData = new FormData(form);
     const submitButton = form.querySelector("button[type='submit']");
-  
+
     if (submitButton) {
       submitButton.setAttribute("disabled", "true");
-      submitButton.textContent = `${method.charAt(0).toUpperCase() + method.slice(1)}ing...`;
+      submitButton.textContent = `${
+        method.charAt(0).toUpperCase() + method.slice(1)
+      }ing...`;
     }
-  
+
     const response = await fetch(url, {
       method,
       body: formData,
-    }); 
-  
+    });
+
     let result;
     let responseOk = response.ok;
-    
+
     try {
       result = await response.json();
     } catch (error) {
-      console.log(chalk.red(error))
+      console.log(chalk.red(error));
       responseOk = false;
       result = { message: "An error occurred. Please try again later." };
     }
-  
+
     if (submitButton) {
       submitButton.removeAttribute("disabled");
       submitButton.textContent = "Submit";
     }
-  
+
     if (responseOk) {
       setMessage(successMessage);
       setShowSuccess(true);
@@ -61,7 +63,7 @@ export default function Dashboard() {
       setMessage(result.message);
       setShowSuccess(false); // Set showSuccess to false for failure cases
     }
-  
+
     setTimeout(() => {
       setMessage("");
       setShowSuccess(false);
@@ -94,7 +96,17 @@ export default function Dashboard() {
             {isCreateShown && (
               <div className="mt-6 mb-10">
                 <h2 className="text-2xl font-bold mb-4">Create Redirect</h2>
-                <Form method="post" onSubmit={(e) => handleFormSubmit(e, "/api/create", "POST", "Redirect created successfully")}>
+                <Form
+                  method="post"
+                  onSubmit={(e) =>
+                    handleFormSubmit(
+                      e,
+                      "/api/create",
+                      "POST",
+                      "Redirect created successfully"
+                    )
+                  }
+                >
                   <input
                     type="password"
                     name="password"
@@ -139,7 +151,17 @@ export default function Dashboard() {
             {isUpdateShown && (
               <div className="mt-6 mb-10">
                 <h2 className="text-2xl font-bold mb-4">Update Redirect</h2>
-                <Form method="post" onSubmit={(e) => handleFormSubmit(e, "/api/update", "PATCH", "Redirect updated successfully")}>
+                <Form
+                  method="post"
+                  onSubmit={(e) =>
+                    handleFormSubmit(
+                      e,
+                      "/api/update",
+                      "PATCH",
+                      "Redirect updated successfully"
+                    )
+                  }
+                >
                   <input
                     type="password"
                     name="password"
@@ -183,7 +205,17 @@ export default function Dashboard() {
           {isDeleteShown && (
             <div className="mt-6 mb-10">
               <h2 className="text-2xl font-bold mb-4">Delete Redirect</h2>
-              <Form method="post" onSubmit={(e) => handleFormSubmit(e, "/api/delete", "DELETE", "Redirect deleted successfully")}>
+              <Form
+                method="post"
+                onSubmit={(e) =>
+                  handleFormSubmit(
+                    e,
+                    "/api/delete",
+                    "DELETE",
+                    "Redirect deleted successfully"
+                  )
+                }
+              >
                 <input
                   type="password"
                   name="password"
@@ -209,8 +241,18 @@ export default function Dashboard() {
           )}
         </div>
         {message && (
-          <div className={`mt-4 p-4 ${showSuccess ? "bg-green-600" : "bg-red-600"} text-white rounded-lg`}>
-            {showSuccess && <img src="/checkmark.svg" alt="Success" className="inline-block mr-2" />}
+          <div
+            className={`mt-4 p-4 ${
+              showSuccess ? "bg-green-600" : "bg-red-600"
+            } text-white rounded-lg`}
+          >
+            {showSuccess && (
+              <img
+                src="/checkmark.svg"
+                alt="Success"
+                className="inline-block mr-2"
+              />
+            )}
             {message}
           </div>
         )}

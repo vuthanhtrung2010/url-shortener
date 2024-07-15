@@ -6,7 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import './styles.css';
+import "./styles.css";
 import { LinksFunction } from "@remix-run/node";
 
 export const links: LinksFunction = () => [
@@ -38,15 +38,15 @@ export const meta: MetaFunction = () => {
     // },
     {
       name: "twitter:title",
-      content: "Trung's URL Shortener"
+      content: "Trung's URL Shortener",
     },
     {
       name: "twitter:card",
-      content: "summary_large_image"
+      content: "summary_large_image",
     },
     {
       name: "twitter:description",
-      content: "A website which displays all my shorten links."
+      content: "A website which displays all my shorten links.",
     },
     {
       charset: "UTF-8",

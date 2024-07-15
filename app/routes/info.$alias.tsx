@@ -22,7 +22,9 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
   const link = await getData(params.alias);
   if (!link) {
     console.log(
-      chalk.red(`Not found any data contains alias: ${params.alias}. Redirecting user to \`/\` route`)
+      chalk.red(
+        `Not found any data contains alias: ${params.alias}. Redirecting user to \`/\` route`
+      )
     );
     return redirect("/");
   }
@@ -41,11 +43,21 @@ export default function InfoPage() {
 
         <p>
           <span className="font-semibold">Path</span>:{" "}
-          <Link className="text-blue-500 hover:text-blue-600" to={URL_data.aliases[0]}>/{URL_data.aliases[0]}</Link>
+          <Link
+            className="text-blue-500 hover:text-blue-600"
+            to={URL_data.aliases[0]}
+          >
+            /{URL_data.aliases[0]}
+          </Link>
         </p>
         <p>
           <span className="font-semibold">Redirect</span>:{" "}
-          <Link className="text-blue-500 hover:text-blue-600" to={URL_data.link}>{URL_data.link}</Link>
+          <Link
+            className="text-blue-500 hover:text-blue-600"
+            to={URL_data.link}
+          >
+            {URL_data.link}
+          </Link>
         </p>
         <p>
           <span className="font-semibold">Created</span>:{" "}

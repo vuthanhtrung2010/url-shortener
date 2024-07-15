@@ -6,17 +6,33 @@ export const action: ActionFunction = async ({ request }) => {
   const password = formData.get("password") as string;
   const alias = formData.get("alias") as string;
 
+  if (!process.env.password) {
+    return json(
+      { success: false, message: "No password provided in environment variables." },
+      { status: 401 }
+    );
+  }
+  
   if (password !== process.env.password) {
-    return json({ success: false, message: "Invalid password" }, { status: 401 });
+    return json(
+      { success: false, message: "Invalid password" },
+      { status: 401 }
+    );
   }
 
-  const mapped_alias: string[] = alias.split(" ").map(a => a.trim()).filter(a => a);
+  const mapped_alias: string[] = alias
+    .split(" ")
+    .map((a) => a.trim())
+    .filter((a) => a);
 
   try {
     await delete_redirect(mapped_alias);
     return json({ success: true, message: "Redirect deleted successfully" });
   } catch (error) {
-    return json({ success: false, message: (error as Error).message }, { status: 500 });
+    return json(
+      { success: false, message: (error as Error).message },
+      { status: 500 }
+    );
   }
 };
 

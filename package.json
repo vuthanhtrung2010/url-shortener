@@ -9,7 +9,7 @@
     "build": "npm-run-all build:compile build:database",
     "dev": "remix vite:dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
-    "start": "NODE_OPTIONS='--import ./instrumentation.server.mjs' remix-serve ./build/server/index.js",
+    "start": "cross-env NODE_ENV=production bun run server.ts",
     "typecheck": "tsc"
   },
   "dependencies": {
@@ -26,8 +26,10 @@
     "cross-env": "^7.0.3",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "install": "^0.13.0",
     "isbot": "^5.0.0",
     "moment": "^2.30.1",
+    "morgan": "^1.10.0",
     "npm-run-all2": "^6.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -35,6 +37,7 @@
   },
   "devDependencies": {
     "@remix-run/dev": "^2.9.2",
+    "@types/morgan": "^1.9.9",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^7.0.0",

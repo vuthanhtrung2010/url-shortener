@@ -2,6 +2,7 @@ import { sentryVitePlugin } from "@sentry/vite-plugin";
 import { vitePlugin as remix } from "@remix-run/dev";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
+import "dotenv/config"
 
 export default defineConfig({
   server: {
@@ -16,7 +17,8 @@ export default defineConfig({
     },
   }), tsconfigPaths(), sentryVitePlugin({
     org: "trung-development",
-    project: "url-shortener"
+    project: "url-shortener",
+    authToken: process.env.SENTRY_AUTH_TOKEN,
   })],
 
   build: {

@@ -5,6 +5,8 @@ declare global {
       password: string;
       PORT?: number;
       NODE_ENV: "production" | "dev" | "development";
+      SENTRY_AUTH_TOKEN?: string;
+      SENTRY_DSN_ADDRESS?: string;
     }
   }
 }

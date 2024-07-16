@@ -70,16 +70,16 @@ function handleBotRequest(
 
           pipe(body);
         },
-        onShellError(error: unknown) {
-          reject(error);
+        onShellError(error) {
+          reject(error as Error);
         },
-        onError(error: unknown) {
+        onError(error) {
           responseStatusCode = 500;
           // Log streaming rendering errors from inside the shell.  Don't log
           // errors encountered during initial shell rendering since they'll
           // reject and get logged in handleDocumentRequest.
           if (shellRendered) {
-            console.error(error);
+            console.error(error as Error);
           }
         },
       }

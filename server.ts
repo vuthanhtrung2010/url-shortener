@@ -1,7 +1,9 @@
 import { createRequestHandler } from "@remix-run/express";
 import express from "express";
 import * as vite from "vite";
+import "./instrumentation.server.mjs"
 import chalk from "chalk";
+import morgan from "morgan";
 
 if (!process.env.password) throw new Error(chalk.red(`[@vuthanhtrung2010/url-shortener] Error: `) + "No Admin password provided.");
 
@@ -16,6 +18,7 @@ const app = express();
 
 app.disable('x-powered-by');
 
+app.use(morgan('tiny'))
 app.use(
     viteDevServer
         ? viteDevServer.middlewares

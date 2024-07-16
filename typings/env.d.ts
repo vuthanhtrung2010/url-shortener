@@ -4,6 +4,7 @@ declare global {
       DATABASE_URL: string;
       password: string;
       PORT?: number;
+      NODE_ENV: "production" | "dev" | "development";
     }
   }
 }

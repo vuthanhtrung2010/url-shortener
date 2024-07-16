@@ -54,7 +54,11 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export function Layout({ children }: { children: React.ReactNode }) {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+export function Layout({ children }: Readonly<LayoutProps>) {
   return (
     <html lang="en" className="h-full">
       <head>

@@ -10,9 +10,9 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Dashboard() {
-  const [isCreateShown, setCreateShown] = useState(false);
-  const [isUpdateShown, setUpdateShown] = useState(false);
-  const [isDeleteShown, setDeleteShown] = useState(false);
+  const [isCreateShown, setIsCreateShown] = useState(false);
+  const [isUpdateShown, setIsUpdateShown] = useState(false);
+  const [isDeleteShown, setIsDeleteShown] = useState(false);
   const [message, setMessage] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
 
@@ -71,9 +71,9 @@ export default function Dashboard() {
   };
 
   const toggleForm = (formType: "create" | "update" | "delete") => {
-    setCreateShown(formType === "create" ? !isCreateShown : false);
-    setUpdateShown(formType === "update" ? !isUpdateShown : false);
-    setDeleteShown(formType === "delete" ? !isDeleteShown : false);
+    setIsCreateShown(formType === "create" ? !isCreateShown : false);
+    setIsUpdateShown(formType === "update" ? !isUpdateShown : false);
+    setIsDeleteShown(formType === "delete" ? !isDeleteShown : false);
   };
 
   return (

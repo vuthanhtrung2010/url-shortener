@@ -14,7 +14,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
   console.log(
     chalk.green(`Found ${link} with alias ${params.alias}! Redirecting user.`)
   );
-  return redirect(link as string);
+  return redirect(link);
 };
 
 export default function page() {

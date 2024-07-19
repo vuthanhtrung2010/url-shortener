@@ -1,22 +1,23 @@
-import { json, ActionFunction } from "@remix-run/node";
-import { update_redirect } from "~/data";
+import { NextResponse } from 'next/server';
+import { create_redirect } from '../../../data';
 
-export const action: ActionFunction = async ({ request }) => {
+export async function POST(request: Request) {
   const formData = await request.formData();
+
   const password = formData.get("password") as string;
   const alias = formData.get("alias") as string;
   const url = formData.get("url") as string;
 
   if (!process.env.password) {
-    return json(
+    return NextResponse.json(
       { success: false, message: "No password provided in environment variables." },
       { status: 401 }
     );
   }
 
   if (password !== process.env.password) {
-    return json(
-      { success: false, message: "Invalid password" },
+    return NextResponse.json(
+      { success: false, message: "Invalid password." },
       { status: 401 }
     );
   }
@@ -27,16 +28,12 @@ export const action: ActionFunction = async ({ request }) => {
     .filter((a) => a);
 
   try {
-    await update_redirect(url, mapped_alias);
-    return json({ success: true, message: "Redirect updated successfully" });
+    await create_redirect(url, mapped_alias);
+    return NextResponse.json({ success: true, message: "Redirect created successfully." });
   } catch (error) {
-    return json(
+    return NextResponse.json(
       { success: false, message: (error as Error).message },
       { status: 500 }
     );
   }
-};
-
-export default function UpdateRedirect() {
-  return <div>POST to this route to update a redirect.</div>;
 }

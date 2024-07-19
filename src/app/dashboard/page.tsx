@@ -1,13 +1,12 @@
-import { useState } from "react";
-import { Form, MetaFunction } from "@remix-run/react";
-import chalk from "chalk";
+'use client';
 
-export const meta: MetaFunction = () => {
-  return [
-    { title: "Dashboard" },
-    { name: "description", content: "Welcome to my URL Shortener" },
-  ];
-};
+import { useState } from "react";
+import { Metadata } from "next";
+import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: 'Dashboard | Trung',
+}
 
 export default function Dashboard() {
   const [isCreateShown, setIsCreateShown] = useState(false);
@@ -45,7 +44,7 @@ export default function Dashboard() {
     try {
       result = await response.json();
     } catch (error) {
-      console.log(chalk.red(error));
+      console.error(error);
       responseOk = false;
       result = { message: "An error occurred. Please try again later." };
     }
@@ -61,7 +60,7 @@ export default function Dashboard() {
       form.reset();
     } else {
       setMessage(result.message);
-      setShowSuccess(false); // Set showSuccess to false for failure cases
+      setShowSuccess(false);
     }
 
     setTimeout(() => {
@@ -96,8 +95,7 @@ export default function Dashboard() {
             {isCreateShown && (
               <div className="mt-6 mb-10">
                 <h2 className="text-2xl font-bold mb-4">Create Redirect</h2>
-                <Form
-                  method="post"
+                <form
                   onSubmit={(e) =>
                     handleFormSubmit(
                       e,
@@ -134,7 +132,7 @@ export default function Dashboard() {
                   >
                     Submit
                   </button>
-                </Form>
+                </form>
               </div>
             )}
           </div>
@@ -151,8 +149,7 @@ export default function Dashboard() {
             {isUpdateShown && (
               <div className="mt-6 mb-10">
                 <h2 className="text-2xl font-bold mb-4">Update Redirect</h2>
-                <Form
-                  method="post"
+                <form
                   onSubmit={(e) =>
                     handleFormSubmit(
                       e,
@@ -189,7 +186,7 @@ export default function Dashboard() {
                   >
                     Submit
                   </button>
-                </Form>
+                </form>
               </div>
             )}
           </div>
@@ -205,8 +202,7 @@ export default function Dashboard() {
           {isDeleteShown && (
             <div className="mt-6 mb-10">
               <h2 className="text-2xl font-bold mb-4">Delete Redirect</h2>
-              <Form
-                method="post"
+              <form
                 onSubmit={(e) =>
                   handleFormSubmit(
                     e,
@@ -236,7 +232,7 @@ export default function Dashboard() {
                 >
                   Submit
                 </button>
-              </Form>
+              </form>
             </div>
           )}
         </div>
@@ -247,9 +243,11 @@ export default function Dashboard() {
             } text-white rounded-lg`}
           >
             {showSuccess && (
-              <img
-                src="/checkmark.svg"
+              <Image
+                src="/assets/checkmark.png"
                 alt="Success"
+                width={20}
+                height={20}
                 className="inline-block mr-2"
               />
             )}

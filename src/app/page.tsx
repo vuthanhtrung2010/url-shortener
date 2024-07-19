@@ -1,14 +1,7 @@
-import { Link } from "@remix-run/react";
-import type { MetaFunction } from "@remix-run/node";
+import Link from 'next/link';
+import Image from 'next/image';
 
-export const meta: MetaFunction = () => {
-  return [
-    { title: "Trung" },
-    { name: "description", content: "Welcome to my URL Shortener" },
-  ];
-};
-
-export default function Index() {
+export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-backgroundColor">
       <section
@@ -17,10 +10,13 @@ export default function Index() {
       >
         {/* Profile picture */}
         <div className="flex flex-col mx-auto my-6">
-          <img
-            className="rounded-full h-32 w-32"
+          <Image
+            className="rounded-full"
             src="/assets/pfp.gif"
             alt="Profile Picture"
+            unoptimized
+            width={128}
+            height={128}
           />
         </div>
 
@@ -39,15 +35,17 @@ export default function Index() {
       >
         {/* Personal website */}
         <Link
-          to="/website"
+          href="/website"
           id="dev"
           className="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-link hover:bg-backgroundAccentLighter mx-auto sm:mx-auto md:mx-0"
         >
           <div className="py-2 px-2 hidden md:flex">
-            <img
+            <Image
               src="/assets/links/dev.png"
-              className="rounded-website h-20 w-20 hidden sm:hidden md:inline"
+              className="rounded-website hidden sm:hidden md:inline"
               alt="Developer Website"
+              width={80}
+              height={80}
             />
           </div>
           <div className="flex flex-col py-4 px-6">
@@ -62,15 +60,17 @@ export default function Index() {
 
         {/* Bots list */}
         <Link
-          to="/botlist"
+          href="/botlist"
           id="botlist"
           className="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-link hover:bg-backgroundAccentLighter mx-auto sm:mx-auto md:mx-0"
         >
           <div className="py-2 px-2 hidden md:flex">
-            <img
+            <Image
               src="/assets/links/dev.png"
-              className="rounded-website h-20 w-20 hidden sm:hidden md:inline"
+              className="rounded-website hidden sm:hidden md:inline"
               alt="Developer Website"
+              width={80}
+              height={80}
             />
           </div>
           <div className="flex flex-col py-4 px-6">
@@ -85,15 +85,17 @@ export default function Index() {
 
         {/* Discord */}
         <Link
-          to="/discord"
+          href="/discord"
           id="discord"
           className="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-link hover:bg-backgroundAccentLighter mx-auto sm:mx-auto md:mx-0"
         >
           <div className="py-2 px-2 hidden md:flex">
-            <img
+            <Image
               src="/assets/links/discord.png"
-              className="rounded-full h-20 w-20 hidden sm:hidden md:inline"
+              className="rounded-full hidden sm:hidden md:inline"
               alt="Discord"
+              width={80}
+              height={80}
             />
           </div>
           <div className="flex flex-col py-4 px-6">
@@ -108,15 +110,17 @@ export default function Index() {
 
         {/* Discord Server */}
         <Link
-          to="/discordserver"
+          href="/discordserver"
           id="discordserver"
           className="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-link hover:bg-backgroundAccentLighter mx-auto sm:mx-auto md:mx-0"
         >
           <div className="py-2 px-2 hidden md:flex">
-            <img
+            <Image
               src="/assets/links/discord.png"
-              className="rounded-full h-20 w-20 hidden sm:hidden md:inline"
+              className="rounded-full hidden sm:hidden md:inline"
               alt="Discord"
+              width={80}
+              height={80}
             />
           </div>
           <div className="flex flex-col py-4 px-6">
@@ -131,15 +135,17 @@ export default function Index() {
 
         {/* Github */}
         <Link
-          to="/github"
+          href="/github"
           id="github"
           className="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-link hover:bg-backgroundAccentLighter mx-auto sm:mx-auto md:mx-0"
         >
           <div className="py-2 px-2 hidden md:flex">
-            <img
+            <Image
               src="/assets/links/github.png"
-              className="rounded-full h-20 w-20 hidden sm:hidden md:inline"
+              className="rounded-full hidden sm:hidden md:inline"
               alt="GitHub"
+              width={80}
+              height={80}
             />
           </div>
           <div className="flex flex-col py-4 px-6">
@@ -154,15 +160,17 @@ export default function Index() {
 
         {/* Status */}
         <Link
-          to="/status"
+          href="/status"
           id="status"
           className="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-link hover:bg-backgroundAccentLighter mx-auto sm:mx-auto md:mx-0"
         >
           <div className="py-2 px-2 hidden md:flex">
-            <img
+            <Image
               src="/assets/links/status.png"
-              className="rounded-full h-20 w-20 hidden sm:hidden md:inline"
+              className="rounded-full hidden sm:hidden md:inline"
               alt="Status"
+              width={80}
+              height={80}
             />
           </div>
           <div className="flex flex-col py-4 px-6">

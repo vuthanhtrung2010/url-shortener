@@ -1,5 +1,4 @@
 import { withSentryConfig } from "@sentry/nextjs";
-import "dotenv/config";
 /** @type {import('next').NextConfig} */
 const nextConfig = {};
 

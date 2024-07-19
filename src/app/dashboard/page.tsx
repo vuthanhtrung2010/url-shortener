@@ -1,12 +1,7 @@
 'use client';
 
 import { useState } from "react";
-import { Metadata } from "next";
 import Image from 'next/image';
-
-export const metadata: Metadata = {
-  title: 'Dashboard | Trung',
-}
 
 export default function Dashboard() {
   const [isCreateShown, setIsCreateShown] = useState(false);

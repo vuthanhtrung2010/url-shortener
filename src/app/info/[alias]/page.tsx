@@ -1,6 +1,5 @@
 import { redirect } from 'next/navigation';
 import chalk from 'chalk';
-import Link from 'next/link';
 import moment from 'moment';
 import { getData } from '../../../data';
 

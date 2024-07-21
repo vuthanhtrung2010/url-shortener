@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Image from 'next/image';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPenToSquare, faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 export default function Dashboard() {
   const [isCreateShown, setIsCreateShown] = useState(false);
@@ -89,7 +91,7 @@ export default function Dashboard() {
             </button>
             {isCreateShown && (
               <div className="mt-6 mb-10">
-                <h2 className="text-2xl font-bold mb-4">Create Redirect</h2>
+                <h2 className="text-2xl font-bold mb-4"><FontAwesomeIcon icon={faPlus} /> Create Redirect</h2>
                 <form
                   onSubmit={(e) =>
                     handleFormSubmit(
@@ -143,7 +145,7 @@ export default function Dashboard() {
             </button>
             {isUpdateShown && (
               <div className="mt-6 mb-10">
-                <h2 className="text-2xl font-bold mb-4">Update Redirect</h2>
+                <h2 className="text-2xl font-bold mb-4"><FontAwesomeIcon icon={faPenToSquare} /> Update Redirect</h2>
                 <form
                   onSubmit={(e) =>
                     handleFormSubmit(
@@ -196,7 +198,7 @@ export default function Dashboard() {
           </button>
           {isDeleteShown && (
             <div className="mt-6 mb-10">
-              <h2 className="text-2xl font-bold mb-4">Delete Redirect</h2>
+              <h2 className="text-2xl font-bold mb-4"><FontAwesomeIcon icon={faTrash} /> Delete Redirect</h2>
               <form
                 onSubmit={(e) =>
                   handleFormSubmit(
@@ -239,7 +241,7 @@ export default function Dashboard() {
           >
             {showSuccess && (
               <Image
-                src="/assets/checkmark.png"
+                src="/assets/checkmark.svg"
                 alt="Success"
                 width={20}
                 height={20}

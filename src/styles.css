@@ -6,19 +6,31 @@
 body, html {
   background-color: #12141D;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+#__next {
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+.footer-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-align: right;
 }
 
 .credit,
 .space-y-0 {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
   color: white;
 }
 
 .credit {
-  font-size: 1.4em;
+  font-size: 1.2em;
+  margin-bottom: 5px;
 }
 
 .credit a {
@@ -29,8 +41,10 @@ body, html {
   text-decoration: none;
 }
 
-.space-y-0 {
+.space-y-0 p {
   color: #ccc;
+  font-size: 0.9em;
+  margin: 0;
 }
 
 /* Scroll Bar */

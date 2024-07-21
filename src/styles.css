@@ -3,6 +3,11 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+body, html {
+  background-color: #12141D;
+  min-height: 100vh;
+}
+
 /* Scroll Bar */
 body::-webkit-scrollbar {
   width: 16px;

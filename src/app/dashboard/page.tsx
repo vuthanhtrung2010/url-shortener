@@ -71,7 +71,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="p-8 max-w-md m-auto bg-zinc-900 text-white text-center">
+    <div className="p-8 max-w-md m-auto text-white text-center bg-backgroundColor">
       <header className="mb-6">
         <h1 className="text-3xl font-bold">Dashboard</h1>
       </header>

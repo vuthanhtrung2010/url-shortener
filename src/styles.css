@@ -8,6 +8,31 @@ body, html {
   min-height: 100vh;
 }
 
+.credit,
+.space-y-0 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+}
+
+.credit {
+  font-size: 1.4em;
+}
+
+.credit a {
+  text-decoration: underline;
+}
+
+.credit a:hover {
+  text-decoration: none;
+}
+
+.space-y-0 {
+  color: #ccc;
+}
+
 /* Scroll Bar */
 body::-webkit-scrollbar {
   width: 16px;

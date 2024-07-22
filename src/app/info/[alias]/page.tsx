@@ -20,7 +20,7 @@ export default async function InfoPage({ params }: Readonly<Props>) {
 
     console.log(chalk.green(`Found ${link} with alias ${alias}!`));
 
-    const href = `/${link.aliases[0]}`;
+    const href = `/${link.alias}`;
 
     return (
         <div className="min-h-screen flex items-center justify-center">
@@ -30,7 +30,7 @@ export default async function InfoPage({ params }: Readonly<Props>) {
                 </header>
                 <p className="mb-2">
                     <span className="font-semibold">Path</span>: 
-                    <a className="text-blue-500 hover:text-blue-600" href={href}> /{link.aliases[0]}</a>
+                    <a className="text-blue-500 hover:text-blue-600" href={href}> /{link.alias}</a>
                 </p>
                 <p className="mb-2">
                     <span className="font-semibold">Redirect</span>: 

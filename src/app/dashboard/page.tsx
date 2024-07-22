@@ -25,9 +25,8 @@ export default function Dashboard() {
 
     if (submitButton) {
       submitButton.setAttribute("disabled", "true");
-      submitButton.textContent = `${
-        method.charAt(0).toUpperCase() + method.slice(1)
-      }ing...`;
+      submitButton.textContent = `${method.charAt(0).toUpperCase() + method.slice(1)
+        }ing...`;
     }
 
     const response = await fetch(url, {
@@ -82,9 +81,8 @@ export default function Dashboard() {
         <div className="space-y-6">
           <div>
             <button
-              className={`${
-                isCreateShown ? "bg-red-700" : "bg-green-600"
-              } hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 mb-6`}
+              className={`${isCreateShown ? "bg-red-700" : "bg-green-600"
+                } hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 mb-6`}
               onClick={() => toggleForm("create")}
             >
               {isCreateShown ? "Close Form" : "Create Redirect"}
@@ -102,27 +100,36 @@ export default function Dashboard() {
                     )
                   }
                 >
-                  <input
-                    type="password"
-                    name="password"
-                    className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 mb-4"
-                    placeholder="Password"
-                    required
-                  />
-                  <input
-                    type="text"
-                    name="alias"
-                    className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 mb-4"
-                    placeholder="Redirect path"
-                    required
-                  />
-                  <input
-                    type="url"
-                    name="url"
-                    className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 mb-6"
-                    placeholder="Redirect URL"
-                    required
-                  />
+                  <div className="form-input mb-4">
+                    <input
+                      type="password"
+                      name="password"
+                      className="w-full text-sm"
+                      placeholder="Password"
+                      required
+                    />
+                    <span className="input-border"></span>
+                  </div>
+                  <div className="form-input mb-4">
+                    <input
+                      type="text"
+                      name="alias"
+                      className="w-full text-sm"
+                      placeholder="Redirect path"
+                      required
+                    />
+                    <span className="input-border"></span>
+                  </div>
+                  <div className="form-input mb-6">
+                    <input
+                      type="url"
+                      name="url"
+                      className="w-full text-sm"
+                      placeholder="Redirect URL"
+                      required
+                    />
+                    <span className="input-border"></span>
+                  </div>
                   <button
                     type="submit"
                     className="bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
@@ -136,9 +143,8 @@ export default function Dashboard() {
 
           <div>
             <button
-              className={`${
-                isUpdateShown ? "bg-red-700" : "bg-yellow-600"
-              } hover:bg-yellow-700 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 mb-6`}
+              className={`${isUpdateShown ? "bg-red-700" : "bg-yellow-600"
+                } hover:bg-yellow-700 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 mb-6`}
               onClick={() => toggleForm("update")}
             >
               {isUpdateShown ? "Close Form" : "Update Redirect"}
@@ -156,27 +162,36 @@ export default function Dashboard() {
                     )
                   }
                 >
-                  <input
-                    type="password"
-                    name="password"
-                    className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 mb-4"
-                    placeholder="Password"
-                    required
-                  />
-                  <input
-                    type="text"
-                    name="alias"
-                    className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 mb-4"
-                    placeholder="Redirect path"
-                    required
-                  />
-                  <input
-                    type="url"
-                    name="url"
-                    className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 mb-6"
-                    placeholder="Redirect URL"
-                    required
-                  />
+                  <div className="form-input mb-4">
+                    <input
+                      type="password"
+                      name="password"
+                      className="w-full text-sm"
+                      placeholder="Password"
+                      required
+                    />
+                    <span className="input-border"></span>
+                  </div>
+                  <div className="form-input mb-4">
+                    <input
+                      type="text"
+                      name="alias"
+                      className="w-full text-sm"
+                      placeholder="Redirect path"
+                      required
+                    />
+                    <span className="input-border"></span>
+                  </div>
+                  <div className="form-input mb-6">
+                    <input
+                      type="url"
+                      name="url"
+                      className="w-full text-sm"
+                      placeholder="Redirect URL"
+                      required
+                    />
+                    <span className="input-border"></span>
+                  </div>
                   <button
                     type="submit"
                     className="bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
@@ -189,9 +204,8 @@ export default function Dashboard() {
           </div>
 
           <button
-            className={`${
-              isDeleteShown ? "bg-red-700" : "bg-red-600"
-            } hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 mb-6`}
+            className={`${isDeleteShown ? "bg-red-700" : "bg-red-600"
+              } hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 mb-6`}
             onClick={() => toggleForm("delete")}
           >
             {isDeleteShown ? "Close Form" : "Delete Redirect"}
@@ -209,20 +223,26 @@ export default function Dashboard() {
                   )
                 }
               >
-                <input
-                  type="password"
-                  name="password"
-                  className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 mb-4"
-                  placeholder="Password"
-                  required
-                />
-                <input
-                  type="text"
-                  name="alias"
-                  className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 mb-4"
-                  placeholder="Redirect path"
-                  required
-                />
+                <div className="form-input mb-4">
+                  <input
+                    type="password"
+                    name="password"
+                    className="w-full text-sm"
+                    placeholder="Password"
+                    required
+                  />
+                  <span className="input-border"></span>
+                </div>
+                <div className="form-input mb-4">
+                  <input
+                    type="text"
+                    name="alias"
+                    className="w-full text-sm"
+                    placeholder="Redirect path"
+                    required
+                  />
+                  <span className="input-border"></span>
+                </div>
                 <button
                   type="submit"
                   className="bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
@@ -235,9 +255,8 @@ export default function Dashboard() {
         </div>
         {message && (
           <div
-            className={`mt-4 p-4 ${
-              showSuccess ? "bg-green-600" : "bg-red-600"
-            } text-white rounded-lg`}
+            className={`mt-4 p-4 ${showSuccess ? "bg-green-600" : "bg-red-600"
+              } text-white rounded-lg`}
           >
             {showSuccess && (
               <Image

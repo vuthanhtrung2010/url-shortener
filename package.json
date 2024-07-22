@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm-run-all build:compile build:database",
+    "build": "npm-run-all build:database build:compile",
     "start": "next start",
     "lint": "next lint",
     "build:database": "npx prisma migrate dev --name init",

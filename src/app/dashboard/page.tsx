@@ -130,11 +130,122 @@ export default function Dashboard() {
                     />
                     <span className="input-border"></span>
                   </div>
-                  <button
-                    type="submit"
-                    className="bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
-                  >
+                  <button className="star-button" type="submit">
                     Submit
+                    <div className="star-1">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlSpace="preserve"
+                        version="1.1"
+                        className="svg-style"
+                        viewBox="0 0 784.11 815.53"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                      >
+                        <defs></defs>
+                        <g id="Layer_x0020_1">
+                          <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                          <path
+                            className="fil0"
+                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                          ></path>
+                        </g>
+                      </svg>
+                    </div>
+                    <div className="star-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlSpace="preserve"
+                        version="1.1"
+                        className="svg-style"
+                        viewBox="0 0 784.11 815.53"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                      >
+                        <defs></defs>
+                        <g id="Layer_x0020_1">
+                          <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                          <path
+                            className="fil0"
+                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                          ></path>
+                        </g>
+                      </svg>
+                    </div>
+                    <div className="star-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlSpace="preserve"
+                        version="1.1"
+                        className="svg-style"
+                        viewBox="0 0 784.11 815.53"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                      >
+                        <defs></defs>
+                        <g id="Layer_x0020_1">
+                          <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                          <path
+                            className="fil0"
+                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                          ></path>
+                        </g>
+                      </svg>
+                    </div>
+                    <div className="star-4">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlSpace="preserve"
+                        version="1.1"
+                        className="svg-style"
+                        viewBox="0 0 784.11 815.53"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                      >
+                        <defs></defs>
+                        <g id="Layer_x0020_1">
+                          <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                          <path
+                            className="fil0"
+                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                          ></path>
+                        </g>
+                      </svg>
+                    </div>
+                    <div className="star-5">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlSpace="preserve"
+                        version="1.1"
+                        className="svg-style"
+                        viewBox="0 0 784.11 815.53"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                      >
+                        <defs></defs>
+                        <g id="Layer_x0020_1">
+                          <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                          <path
+                            className="fil0"
+                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                          ></path>
+                        </g>
+                      </svg>
+                    </div>
+                    <div className="star-6">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlSpace="preserve"
+                        version="1.1"
+                        className="svg-style"
+                        viewBox="0 0 784.11 815.53"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                      >
+                        <defs></defs>
+                        <g id="Layer_x0020_1">
+                          <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                          <path
+                            className="fil0"
+                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                          ></path>
+                        </g>
+                      </svg>
+                    </div>
                   </button>
                 </form>
               </div>
@@ -192,11 +303,122 @@ export default function Dashboard() {
                     />
                     <span className="input-border"></span>
                   </div>
-                  <button
-                    type="submit"
-                    className="bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
-                  >
+                  <button className="star-button" type="submit">
                     Submit
+                    <div className="star-1">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlSpace="preserve"
+                        version="1.1"
+                        className="svg-style"
+                        viewBox="0 0 784.11 815.53"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                      >
+                        <defs></defs>
+                        <g id="Layer_x0020_1">
+                          <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                          <path
+                            className="fil0"
+                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                          ></path>
+                        </g>
+                      </svg>
+                    </div>
+                    <div className="star-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlSpace="preserve"
+                        version="1.1"
+                        className="svg-style"
+                        viewBox="0 0 784.11 815.53"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                      >
+                        <defs></defs>
+                        <g id="Layer_x0020_1">
+                          <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                          <path
+                            className="fil0"
+                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                          ></path>
+                        </g>
+                      </svg>
+                    </div>
+                    <div className="star-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlSpace="preserve"
+                        version="1.1"
+                        className="svg-style"
+                        viewBox="0 0 784.11 815.53"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                      >
+                        <defs></defs>
+                        <g id="Layer_x0020_1">
+                          <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                          <path
+                            className="fil0"
+                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                          ></path>
+                        </g>
+                      </svg>
+                    </div>
+                    <div className="star-4">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlSpace="preserve"
+                        version="1.1"
+                        className="svg-style"
+                        viewBox="0 0 784.11 815.53"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                      >
+                        <defs></defs>
+                        <g id="Layer_x0020_1">
+                          <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                          <path
+                            className="fil0"
+                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                          ></path>
+                        </g>
+                      </svg>
+                    </div>
+                    <div className="star-5">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlSpace="preserve"
+                        version="1.1"
+                        className="svg-style"
+                        viewBox="0 0 784.11 815.53"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                      >
+                        <defs></defs>
+                        <g id="Layer_x0020_1">
+                          <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                          <path
+                            className="fil0"
+                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                          ></path>
+                        </g>
+                      </svg>
+                    </div>
+                    <div className="star-6">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlSpace="preserve"
+                        version="1.1"
+                        className="svg-style"
+                        viewBox="0 0 784.11 815.53"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                      >
+                        <defs></defs>
+                        <g id="Layer_x0020_1">
+                          <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                          <path
+                            className="fil0"
+                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                          ></path>
+                        </g>
+                      </svg>
+                    </div>
                   </button>
                 </form>
               </div>
@@ -243,11 +465,122 @@ export default function Dashboard() {
                   />
                   <span className="input-border"></span>
                 </div>
-                <button
-                  type="submit"
-                  className="bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
-                >
+                <button className="star-button" type="submit">
                   Submit
+                  <div className="star-1">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlSpace="preserve"
+                      version="1.1"
+                      className="svg-style"
+                      viewBox="0 0 784.11 815.53"
+                      xmlnsXlink="http://www.w3.org/1999/xlink"
+                    >
+                      <defs></defs>
+                      <g id="Layer_x0020_1">
+                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                        <path
+                          className="fil0"
+                          d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                        ></path>
+                      </g>
+                    </svg>
+                  </div>
+                  <div className="star-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlSpace="preserve"
+                      version="1.1"
+                      className="svg-style"
+                      viewBox="0 0 784.11 815.53"
+                      xmlnsXlink="http://www.w3.org/1999/xlink"
+                    >
+                      <defs></defs>
+                      <g id="Layer_x0020_1">
+                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                        <path
+                          className="fil0"
+                          d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                        ></path>
+                      </g>
+                    </svg>
+                  </div>
+                  <div className="star-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlSpace="preserve"
+                      version="1.1"
+                      className="svg-style"
+                      viewBox="0 0 784.11 815.53"
+                      xmlnsXlink="http://www.w3.org/1999/xlink"
+                    >
+                      <defs></defs>
+                      <g id="Layer_x0020_1">
+                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                        <path
+                          className="fil0"
+                          d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                        ></path>
+                      </g>
+                    </svg>
+                  </div>
+                  <div className="star-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlSpace="preserve"
+                      version="1.1"
+                      className="svg-style"
+                      viewBox="0 0 784.11 815.53"
+                      xmlnsXlink="http://www.w3.org/1999/xlink"
+                    >
+                      <defs></defs>
+                      <g id="Layer_x0020_1">
+                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                        <path
+                          className="fil0"
+                          d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                        ></path>
+                      </g>
+                    </svg>
+                  </div>
+                  <div className="star-5">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlSpace="preserve"
+                      version="1.1"
+                      className="svg-style"
+                      viewBox="0 0 784.11 815.53"
+                      xmlnsXlink="http://www.w3.org/1999/xlink"
+                    >
+                      <defs></defs>
+                      <g id="Layer_x0020_1">
+                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                        <path
+                          className="fil0"
+                          d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                        ></path>
+                      </g>
+                    </svg>
+                  </div>
+                  <div className="star-6">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlSpace="preserve"
+                      version="1.1"
+                      className="svg-style"
+                      viewBox="0 0 784.11 815.53"
+                      xmlnsXlink="http://www.w3.org/1999/xlink"
+                    >
+                      <defs></defs>
+                      <g id="Layer_x0020_1">
+                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                        <path
+                          className="fil0"
+                          d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                        ></path>
+                      </g>
+                    </svg>
+                  </div>
                 </button>
               </form>
             </div>

@@ -1,16 +1,15 @@
 import { PrismaClient } from "@prisma/client";
 import chalk from "chalk";
+import * as Sentry from "@sentry/nextjs";
 
 export const prisma = new PrismaClient();
 
 export async function getURL(alias: string): Promise<string | null> {
-  const result = await prisma.links.findFirst({
+  const result = await prisma.links.findUnique({
     where: {
-      aliases: {
-        has: alias,
-      },
-    },
-  });
+      alias: alias
+    }
+  })
 
   if (!result) {
     console.log(chalk.red(`No record found for alias: ${alias}`));
@@ -20,7 +19,7 @@ export async function getURL(alias: string): Promise<string | null> {
   // Update the counter.
   await prisma.links.update({
     where: {
-      id: result.id,
+      alias: alias,
     },
     data: {
       hits: {
@@ -41,47 +40,48 @@ export async function create_redirect(url: string, aliases: string[]) {
     );
 
     // Check if any of the aliases already exist
-    const existingLinks = await prisma.links.findMany({
-      where: {
-        OR: aliases.map((alias) => ({
-          aliases: {
-            has: alias,
-          },
-        })),
-      },
-    });
+    let existingLinks = 0;
 
-    // Check if the URL already exists
-    const existingURL = await prisma.links.findUnique({
-      where: {
-        link: url,
-      },
-    });
+    aliases.forEach(async (alias: string) => {
+      const data = await prisma.links.findUnique({
+        where: {
+          alias: alias
+        }
+      })
 
-    // If any aliases or the URL already exist, handle the conflict
-    if (existingLinks.length > 0 || existingURL) {
+      if (data) existingLinks++;
+    })
+
+    // If any aliases exists, handle the conflict
+    if (existingLinks > 0) {
       console.log(
         chalk.red(
-          "Some link/aliases already exist:",
+          "Some aliases already exist:",
           existingLinks,
-          existingURL
         )
       );
-      throw new Error("Some link/aliases already exist.");
+      throw new Error("Some aliases already exist.");
     }
 
     // Proceed with creating the new redirect if no aliases exist
-    const newLink = await prisma.links.create({
-      data: {
-        link: url,
-        aliases: aliases,
-        hits: 0,
-      },
-    });
+    aliases.forEach(async (alias: string) => {
+      try {
+        await prisma.links.create({
+          data: {
+            link: url,
+            alias: alias,
+            hits: 0
+          }
+        })
+      } catch (e) {
+        console.error(e);
+        Sentry.captureException(e);
+      }
+    })
     console.log(
       chalk.green(`Created: ${url} with aliases ${aliases.join(", ")}.`)
     );
-    return newLink;
+    return;
   } catch (error) {
     console.error("Error creating redirect:", error);
     throw new Error("Failed to create redirect.");
@@ -96,34 +96,41 @@ export async function update_redirect(url: string, aliases: string[]) {
       )
     );
 
-    // Check if the URL already exists
-    const existingURL = await prisma.links.findUnique({
-      where: {
-        link: url,
-      },
-    });
+    // Check if the alias already exists
+    let exisitingAliases = 0;
 
-    if (!existingURL) {
+    aliases.forEach(async (alias: string) => {
+      const data = await prisma.links.findUnique({
+        where: {
+          alias: alias
+        }
+      })
+
+      if (data) exisitingAliases++;
+    })
+
+    if (!exisitingAliases) {
       console.log(
-        chalk.red(`Cannot find existing URL from ${url}, logs:\n`, existingURL)
+        chalk.red(`Cannot find existing aliases from ${aliases.join(", ")}`)
       );
-      throw new Error("Cannot find existing URL from ${url}.");
+      throw new Error("Cannot find existing aliases.");
     }
 
-    // Update the url with aliases
-    const newLink = await prisma.links.update({
-      where: {
-        link: url,
-      },
-      data: {
-        aliases: aliases,
-      },
-    });
+    aliases.forEach(async (alias: string) => {
+      await prisma.links.update({
+        where: {
+          alias: alias
+        },
+        data: {
+          link: url
+        }
+      })
+    })
 
     console.log(
-      chalk.green(`Updated: ${url} with aliases ${aliases.join(", ")}.`)
+      chalk.green(`Updated: ${aliases.join(", ")} with URL ${url}.`)
     );
-    return newLink;
+    return;
   } catch (error) {
     console.error("Error updating redirect:", error);
     throw new Error("Failed to update redirect.");
@@ -138,18 +145,22 @@ export async function delete_redirect(aliases: string[]) {
       )
     );
 
-    // Check if the URL already exists
-    const existingLinks = await prisma.links.findMany({
-      where: {
-        OR: aliases.map((alias) => ({
-          aliases: {
-            has: alias,
-          },
-        })),
-      },
-    });
+    // Check if the URLs already exist
+    let existingLinks = 0;
 
-    // If any aliases or the URL already exist, handle the conflict
+    for (const alias of aliases) {
+      const data = await prisma.links.findUnique({
+        where: {
+          alias: alias
+        }
+      });
+
+      if (data) {
+        existingLinks++;
+      }
+    }
+
+    // If no aliases matched
     if (!existingLinks) {
       console.log(
         chalk.red(
@@ -157,22 +168,21 @@ export async function delete_redirect(aliases: string[]) {
           existingLinks
         )
       );
+      console.log(existingLinks)
       throw new Error(`Cannot find existing URL from ${aliases.join(", ")}.`);
     }
 
     let count = 0;
     // Update the url with aliases
-    aliases.forEach(async (alias) => {
-      const result = await prisma.links.deleteMany({
+    for (const alias of aliases) {
+      const result = await prisma.links.delete({
         where: {
-          aliases: {
-            has: alias,
-          },
-        },
-      });
+          alias: alias
+        }
+      })
 
-      count += result.count;
-    });
+      if (result) count += 1;
+    }
 
     console.log(
       chalk.green(`Deleted ${count} URLs with aliases: ${aliases.join(", ")}.`)
@@ -185,13 +195,12 @@ export async function delete_redirect(aliases: string[]) {
 }
 
 export async function getData(alias: string) {
-  const link = await prisma.links.findFirst({
+  const link = await prisma.links.findUnique({
     where: {
-      aliases: {
-        has: alias,
-      },
+      alias: alias
     },
   });
+
   if (!link) {
     return null;
   }

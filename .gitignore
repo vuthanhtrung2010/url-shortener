@@ -41,3 +41,5 @@ next-env.d.ts
 # Sentry config files
 .env.sentry-build-plugin
 .sentryclirc
+# Million Lint
+.million

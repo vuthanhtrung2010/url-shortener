@@ -524,7 +524,7 @@ export default function Dashboard() {
                     className="w-full text-sm"
                     required
                   />
-                  <label>
+                  <label id="password">
                     <span style={{ transitionDelay: '0ms' }}>P</span>
                     <span style={{ transitionDelay: '50ms' }}>a</span>
                     <span style={{ transitionDelay: '100ms' }}>s</span>
@@ -543,7 +543,7 @@ export default function Dashboard() {
                     className="w-full text-sm"
                     required
                   />
-                  <label>
+                  <label id="RedictPath">
                     <span style={{ transitionDelay: '0ms' }}>R</span>
                     <span style={{ transitionDelay: '50ms' }}>e</span>
                     <span style={{ transitionDelay: '100ms' }}>d</span>

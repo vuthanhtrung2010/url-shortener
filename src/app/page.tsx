@@ -12,7 +12,7 @@ export default function Home() {
         <div className="flex flex-col mx-auto my-6">
           <Image
             className="rounded-full"
-            src="/assets/pfp.gif"
+            src="/assets/pfp.webp"
             alt="Profile Picture"
             unoptimized
             width={128}

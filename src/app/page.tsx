@@ -41,7 +41,7 @@ export default function Home() {
         >
           <div className="py-2 px-2 hidden md:flex">
             <Image
-              src="/assets/links/dev.png"
+              src="/assets/links/dev.webp"
               className="rounded-website hidden sm:hidden md:inline"
               alt="Developer Website"
               width={80}
@@ -66,7 +66,7 @@ export default function Home() {
         >
           <div className="py-2 px-2 hidden md:flex">
             <Image
-              src="/assets/links/dev.png"
+              src="/assets/links/dev.webp"
               className="rounded-website hidden sm:hidden md:inline"
               alt="Developer Website"
               width={80}
@@ -91,7 +91,7 @@ export default function Home() {
         >
           <div className="py-2 px-2 hidden md:flex">
             <Image
-              src="/assets/links/discord.png"
+              src="/assets/links/discord.webp"
               className="rounded-full hidden sm:hidden md:inline"
               alt="Discord"
               width={80}
@@ -116,7 +116,7 @@ export default function Home() {
         >
           <div className="py-2 px-2 hidden md:flex">
             <Image
-              src="/assets/links/discord.png"
+              src="/assets/links/discord.webp"
               className="rounded-full hidden sm:hidden md:inline"
               alt="Discord"
               width={80}
@@ -141,7 +141,7 @@ export default function Home() {
         >
           <div className="py-2 px-2 hidden md:flex">
             <Image
-              src="/assets/links/github.png"
+              src="/assets/links/github.webp"
               className="rounded-full hidden sm:hidden md:inline"
               alt="GitHub"
               width={80}
@@ -166,7 +166,7 @@ export default function Home() {
         >
           <div className="py-2 px-2 hidden md:flex">
             <Image
-              src="/assets/links/status.png"
+              src="/assets/links/status.webp"
               className="rounded-full hidden sm:hidden md:inline"
               alt="Status"
               width={80}

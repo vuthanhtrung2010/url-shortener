@@ -1,7 +1,25 @@
 import MillionLint from '@million/lint';
 import { withSentryConfig } from "@sentry/nextjs";
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN',
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; object-src 'none'; base-uri 'self'; frame-src 'self'"
+          },
+        ],
+      },
+    ];
+  },
+};
 export default MillionLint.next({
   rsc: true
 })(withSentryConfig(nextConfig, {

@@ -7,9 +7,9 @@ export const prisma = new PrismaClient();
 export async function getURL(alias: string): Promise<string | null> {
   const result = await prisma.links.findUnique({
     where: {
-      alias: alias
-    }
-  })
+      alias: alias,
+    },
+  });
 
   if (!result) {
     console.log(chalk.red(`No record found for alias: ${alias}`));
@@ -35,8 +35,8 @@ export async function create_redirect(url: string, aliases: string[]) {
   try {
     console.log(
       chalk.blue(
-        `Requested creating ${url} with aliases ${aliases.join(", ")}.`
-      )
+        `Requested creating ${url} with aliases ${aliases.join(", ")}.`,
+      ),
     );
 
     // Check if any of the aliases already exist
@@ -45,21 +45,16 @@ export async function create_redirect(url: string, aliases: string[]) {
     aliases.forEach(async (alias: string) => {
       const data = await prisma.links.findUnique({
         where: {
-          alias: alias
-        }
-      })
+          alias: alias,
+        },
+      });
 
       if (data) existingLinks++;
-    })
+    });
 
     // If any aliases exists, handle the conflict
     if (existingLinks > 0) {
-      console.log(
-        chalk.red(
-          "Some aliases already exist:",
-          existingLinks,
-        )
-      );
+      console.log(chalk.red("Some aliases already exist:", existingLinks));
       throw new Error("Some aliases already exist.");
     }
 
@@ -70,16 +65,16 @@ export async function create_redirect(url: string, aliases: string[]) {
           data: {
             link: url,
             alias: alias,
-            hits: 0
-          }
-        })
+            hits: 0,
+          },
+        });
       } catch (e) {
         console.error(e);
         Sentry.captureException(e);
       }
-    })
+    });
     console.log(
-      chalk.green(`Created: ${url} with aliases ${aliases.join(", ")}.`)
+      chalk.green(`Created: ${url} with aliases ${aliases.join(", ")}.`),
     );
     return;
   } catch (error) {
@@ -92,8 +87,8 @@ export async function update_redirect(url: string, aliases: string[]) {
   try {
     console.log(
       chalk.blue(
-        `Requested updating ${url} with aliases ${aliases.join(", ")}.`
-      )
+        `Requested updating ${url} with aliases ${aliases.join(", ")}.`,
+      ),
     );
 
     // Check if the alias already exists
@@ -102,16 +97,16 @@ export async function update_redirect(url: string, aliases: string[]) {
     aliases.forEach(async (alias: string) => {
       const data = await prisma.links.findUnique({
         where: {
-          alias: alias
-        }
-      })
+          alias: alias,
+        },
+      });
 
       if (data) exisitingAliases++;
-    })
+    });
 
     if (!exisitingAliases) {
       console.log(
-        chalk.red(`Cannot find existing aliases from ${aliases.join(", ")}`)
+        chalk.red(`Cannot find existing aliases from ${aliases.join(", ")}`),
       );
       throw new Error("Cannot find existing aliases.");
     }
@@ -119,17 +114,15 @@ export async function update_redirect(url: string, aliases: string[]) {
     aliases.forEach(async (alias: string) => {
       await prisma.links.update({
         where: {
-          alias: alias
+          alias: alias,
         },
         data: {
-          link: url
-        }
-      })
-    })
+          link: url,
+        },
+      });
+    });
 
-    console.log(
-      chalk.green(`Updated: ${aliases.join(", ")} with URL ${url}.`)
-    );
+    console.log(chalk.green(`Updated: ${aliases.join(", ")} with URL ${url}.`));
     return;
   } catch (error) {
     console.error("Error updating redirect:", error);
@@ -141,8 +134,8 @@ export async function delete_redirect(aliases: string[]) {
   try {
     console.log(
       chalk.blue(
-        `Requested deleting all URLs with aliases: ${aliases.join(", ")}.`
-      )
+        `Requested deleting all URLs with aliases: ${aliases.join(", ")}.`,
+      ),
     );
 
     // Check if the URLs already exist
@@ -151,8 +144,8 @@ export async function delete_redirect(aliases: string[]) {
     for (const alias of aliases) {
       const data = await prisma.links.findUnique({
         where: {
-          alias: alias
-        }
+          alias: alias,
+        },
       });
 
       if (data) {
@@ -165,10 +158,10 @@ export async function delete_redirect(aliases: string[]) {
       console.log(
         chalk.red(
           `Cannot find existing URLs from ${aliases.join(", ")}, logs:\n`,
-          existingLinks
-        )
+          existingLinks,
+        ),
       );
-      console.log(existingLinks)
+      console.log(existingLinks);
       throw new Error(`Cannot find existing URL from ${aliases.join(", ")}.`);
     }
 
@@ -177,15 +170,15 @@ export async function delete_redirect(aliases: string[]) {
     for (const alias of aliases) {
       const result = await prisma.links.delete({
         where: {
-          alias: alias
-        }
-      })
+          alias: alias,
+        },
+      });
 
       if (result) count += 1;
     }
 
     console.log(
-      chalk.green(`Deleted ${count} URLs with aliases: ${aliases.join(", ")}.`)
+      chalk.green(`Deleted ${count} URLs with aliases: ${aliases.join(", ")}.`),
     );
     return "Success";
   } catch (error) {
@@ -197,7 +190,7 @@ export async function delete_redirect(aliases: string[]) {
 export async function getData(alias: string) {
   const link = await prisma.links.findUnique({
     where: {
-      alias: alias
+      alias: alias,
     },
   });
 

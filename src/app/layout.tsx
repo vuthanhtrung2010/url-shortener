@@ -20,7 +20,10 @@ export default function RootLayout({
         {children}
         <div className="footer-container">
           <div className="credit" id="credit">
-            Made by <a href="https://discord.gg/TR8k3MtjNZ">Vũ Thành Trung</a> | <a href="https://github.com/vuthanhtrung2010/url-shortener">Github</a>
+            Made by <a href="https://discord.gg/TR8k3MtjNZ">Vũ Thành Trung</a> |{" "}
+            <a href="https://github.com/vuthanhtrung2010/url-shortener">
+              Github
+            </a>
           </div>
           <div className="space-y-0">
             <p>&copy; 2024 Trung - All Rights Reserved.</p>

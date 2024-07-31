@@ -1,5 +1,5 @@
-import { NextResponse } from 'next/server';
-import { create_redirect } from '../../../data';
+import { NextResponse } from "next/server";
+import { create_redirect } from "../../../data";
 
 export async function POST(request: Request) {
   const formData = await request.formData();
@@ -10,15 +10,18 @@ export async function POST(request: Request) {
 
   if (!process.env.password) {
     return NextResponse.json(
-      { success: false, message: "No password provided in environment variables." },
-      { status: 401 }
+      {
+        success: false,
+        message: "No password provided in environment variables.",
+      },
+      { status: 401 },
     );
   }
 
   if (password !== process.env.password) {
     return NextResponse.json(
       { success: false, message: "Invalid password." },
-      { status: 401 }
+      { status: 401 },
     );
   }
 
@@ -29,11 +32,14 @@ export async function POST(request: Request) {
 
   try {
     await create_redirect(url, mapped_alias);
-    return NextResponse.json({ success: true, message: "Redirect created successfully." });
+    return NextResponse.json({
+      success: true,
+      message: "Redirect created successfully.",
+    });
   } catch (error) {
     return NextResponse.json(
       { success: false, message: (error as Error).message },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

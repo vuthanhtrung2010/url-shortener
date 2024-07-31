@@ -2,8 +2,9 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-body, html {
-  background-color: #12141D;
+body,
+html {
+  background-color: #12141d;
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -22,7 +23,8 @@ body, html {
   text-align: right;
 }
 
-.credit, .space-y-0 {
+.credit,
+.space-y-0 {
   color: white;
 }
 
@@ -111,8 +113,8 @@ html {
   transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.form-input input:focus+label span,
-.form-input input:valid+label span {
+.form-input input:focus + label span,
+.form-input input:valid + label span {
   color: lightblue;
   transform: translateY(-30px);
 }

@@ -53,7 +53,7 @@ export default function Home() {
               Personal Website
             </h3>
             <span className="text-base text-secondaryText pt-1 text-center sm:text-center md:text-left">
-              trung.is-a.dev
+              trung.devtrung.tech
             </span>
           </div>
         </Link>
@@ -78,7 +78,7 @@ export default function Home() {
               Bots List
             </h3>
             <span className="text-base text-secondaryText pt-1 text-center sm:text-center md:text-left">
-              bots.trung.is-a.dev
+              bots.devtrung.tech
             </span>
           </div>
         </Link>
@@ -178,7 +178,7 @@ export default function Home() {
               Status
             </h3>
             <span className="text-base text-secondaryText pt-1 text-center sm:text-center md:text-left">
-              uptime.trung.is-a.dev
+              status.devtrung.tech
             </span>
           </div>
         </Link>

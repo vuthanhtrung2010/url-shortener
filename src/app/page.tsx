@@ -17,6 +17,7 @@ export default function Home() {
             unoptimized
             width={128}
             height={128}
+            priority
           />
         </div>
 
@@ -39,10 +40,10 @@ export default function Home() {
           id="dev"
           className="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-link hover:bg-backgroundAccentLighter mx-auto sm:mx-auto md:mx-0"
         >
-          <div className="py-2 px-2 hidden md:flex">
+          <div className="py-2 px-2 md:flex">
             <Image
               src="/assets/links/dev.webp"
-              className="rounded-website hidden sm:hidden md:inline"
+              className="rounded-website sm:hidden md:inline"
               alt="Developer Website"
               width={80}
               height={80}
@@ -64,10 +65,10 @@ export default function Home() {
           id="botlist"
           className="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-link hover:bg-backgroundAccentLighter mx-auto sm:mx-auto md:mx-0"
         >
-          <div className="py-2 px-2 hidden md:flex">
+          <div className="py-2 px-2 md:flex">
             <Image
               src="/assets/links/dev.webp"
-              className="rounded-website hidden sm:hidden md:inline"
+              className="rounded-website sm:hidden md:inline"
               alt="Developer Website"
               width={80}
               height={80}
@@ -89,10 +90,10 @@ export default function Home() {
           id="discord"
           className="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-link hover:bg-backgroundAccentLighter mx-auto sm:mx-auto md:mx-0"
         >
-          <div className="py-2 px-2 hidden md:flex">
+          <div className="py-2 px-2 md:flex">
             <Image
               src="/assets/links/discord.webp"
-              className="rounded-full hidden sm:hidden md:inline"
+              className="rounded-full sm:hidden md:inline"
               alt="Discord"
               width={80}
               height={80}
@@ -114,10 +115,10 @@ export default function Home() {
           id="discordserver"
           className="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-link hover:bg-backgroundAccentLighter mx-auto sm:mx-auto md:mx-0"
         >
-          <div className="py-2 px-2 hidden md:flex">
+          <div className="py-2 px-2 md:flex">
             <Image
               src="/assets/links/discord.webp"
-              className="rounded-full hidden sm:hidden md:inline"
+              className="rounded-full sm:hidden md:inline"
               alt="Discord"
               width={80}
               height={80}
@@ -139,10 +140,10 @@ export default function Home() {
           id="github"
           className="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-link hover:bg-backgroundAccentLighter mx-auto sm:mx-auto md:mx-0"
         >
-          <div className="py-2 px-2 hidden md:flex">
+          <div className="py-2 px-2 md:flex">
             <Image
               src="/assets/links/github.webp"
-              className="rounded-full hidden sm:hidden md:inline"
+              className="rounded-full sm:hidden md:inline"
               alt="GitHub"
               width={80}
               height={80}
@@ -164,10 +165,10 @@ export default function Home() {
           id="status"
           className="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-link hover:bg-backgroundAccentLighter mx-auto sm:mx-auto md:mx-0"
         >
-          <div className="py-2 px-2 hidden md:flex">
+          <div className="py-2 px-2 md:flex">
             <Image
               src="/assets/links/status.webp"
-              className="rounded-full hidden sm:hidden md:inline"
+              className="rounded-full sm:hidden md:inline"
               alt="Status"
               width={80}
               height={80}

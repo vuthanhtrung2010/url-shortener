@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { create_redirect } from "../../../data";
+import { createRedirect } from "../../../data";
 
 export async function POST(request: Request) {
   const formData = await request.formData();
@@ -31,7 +31,7 @@ export async function POST(request: Request) {
     .filter((a) => a);
 
   try {
-    await create_redirect(url, mapped_alias);
+    await createRedirect(url, mapped_alias);
     return NextResponse.json({
       success: true,
       message: "Redirect created successfully.",

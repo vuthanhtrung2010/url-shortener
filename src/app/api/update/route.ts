@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { update_redirect } from "../../../data";
+import { updateRedirect } from "../../../data";
 
 export async function PATCH(request: Request) {
   const formData = await request.formData();
@@ -30,7 +30,7 @@ export async function PATCH(request: Request) {
     .filter((a) => a);
 
   try {
-    await update_redirect(url, mapped_alias);
+    await updateRedirect(url, mapped_alias);
     return NextResponse.json({
       success: true,
       message: "Redirect updated successfully",

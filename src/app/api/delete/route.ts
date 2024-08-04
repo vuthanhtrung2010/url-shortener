@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { delete_redirect } from "../../../data";
+import { deleteRedirect } from "../../../data";
 
 export async function DELETE(request: Request) {
   const formData = await request.formData();
@@ -29,7 +29,7 @@ export async function DELETE(request: Request) {
     .filter((a) => a);
 
   try {
-    await delete_redirect(mapped_alias);
+    await deleteRedirect(mapped_alias);
     return NextResponse.json({
       success: true,
       message: "Redirect deleted successfully",

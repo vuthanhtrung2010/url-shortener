@@ -1,13 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Leckerli_One } from "next/font/google";
-
-const leckerliFont = Leckerli_One({
-  weight: "400",
-  style: "normal",
-  subsets: ["latin"],
-  display: "swap",
-})
 
 export default function Home() {
   return (
@@ -31,7 +23,7 @@ export default function Home() {
 
         {/* Info */}
         <div className="flex flex-col mx-auto mb-6">
-          <h1 className={`${leckerliFont.className} text-primaryText text-3xl font-bold text-center`}>
+        <h1 style={{ fontFamily: "'Leckerli One', cursive" }} className="text-primaryText text-3xl font-bold text-center">
             Trung
           </h1>
         </div>

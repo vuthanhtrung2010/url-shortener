@@ -23,7 +23,7 @@ export default function Home() {
 
         {/* Info */}
         <div className="flex flex-col mx-auto mb-6">
-        <h1 style={{ fontFamily: "'Leckerli One', cursive" }} className="text-primaryText text-3xl font-bold text-center">
+        <h1 style={{ fontFamily: "'Leckerli One', cursive", fontSize: "2.1rem" }} className="text-primaryText text-3xl font-bold text-center">
             Trung
           </h1>
         </div>

@@ -54,7 +54,7 @@ export default function Home() {
               Personal Website
             </h3>
             <span className="text-base text-secondaryText pt-1 text-center sm:text-center md:text-left">
-              trung.devtrung.tech
+              devtrung.tech
             </span>
           </div>
         </Link>

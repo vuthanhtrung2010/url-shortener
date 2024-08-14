@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import { MainPage } from "@/components/main-page";
+import { DATA } from "@/config";
 
 export default function Home() {
   return (
@@ -12,7 +14,7 @@ export default function Home() {
         <div className="flex flex-col mx-auto my-6">
           <Image
             className="rounded-full"
-            src="/assets/pfp.webp"
+            src={DATA.profilePicture}
             alt="Profile Picture"
             unoptimized
             width={128}
@@ -24,7 +26,7 @@ export default function Home() {
         {/* Info */}
         <div className="flex flex-col mx-auto mb-6">
         <h1 style={{ fontFamily: "'Leckerli One', cursive", fontSize: "2.1rem" }} className="text-primaryText text-3xl font-bold text-center">
-            Trung
+            {DATA.name}
           </h1>
         </div>
       </section>
@@ -34,155 +36,17 @@ export default function Home() {
         id="links"
         className="w-10/12 flex flex-col mx-auto mb-10 mt-1 md:w-8/12 lg:w-4/12"
       >
-        {/* Personal website */}
-        <Link
-          href="/website"
-          id="dev"
-          className="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-link hover:bg-backgroundAccentLighter mx-auto sm:mx-auto md:mx-0"
-        >
-          <div className="py-2 px-2 md:flex">
-            <Image
-              src="/assets/links/dev.webp"
-              className="rounded-website sm:hidden md:inline"
-              alt="Developer Website"
-              width={80}
-              height={80}
+        {
+          DATA.links.map((link, index) => (
+            <MainPage
+              key={index}
+              title={link.name}
+              target={link.target}
+              description={link.description}
+              icon={link.icon}
             />
-          </div>
-          <div className="flex flex-col py-4 px-6">
-            <h3 className="text-xl text-primaryText text-center sm:text-center md:text-left">
-              Personal Website
-            </h3>
-            <span className="text-base text-secondaryText pt-1 text-center sm:text-center md:text-left">
-              devtrung.tech
-            </span>
-          </div>
-        </Link>
-
-        {/* Bots list */}
-        <Link
-          href="/botlist"
-          id="botlist"
-          className="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-link hover:bg-backgroundAccentLighter mx-auto sm:mx-auto md:mx-0"
-        >
-          <div className="py-2 px-2 md:flex">
-            <Image
-              src="/assets/links/dev.webp"
-              className="rounded-website sm:hidden md:inline"
-              alt="Developer Website"
-              width={80}
-              height={80}
-            />
-          </div>
-          <div className="flex flex-col py-4 px-6">
-            <h3 className="text-xl text-primaryText text-center sm:text-center md:text-left">
-              Bots List
-            </h3>
-            <span className="text-base text-secondaryText pt-1 text-center sm:text-center md:text-left">
-              bots.devtrung.tech
-            </span>
-          </div>
-        </Link>
-
-        {/* Discord */}
-        <Link
-          href="/discord"
-          id="discord"
-          className="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-link hover:bg-backgroundAccentLighter mx-auto sm:mx-auto md:mx-0"
-        >
-          <div className="py-2 px-2 md:flex">
-            <Image
-              src="/assets/links/discord.webp"
-              className="rounded-full sm:hidden md:inline"
-              alt="Discord"
-              width={80}
-              height={80}
-            />
-          </div>
-          <div className="flex flex-col py-4 px-6">
-            <h3 className="text-xl text-primaryText text-center sm:text-center md:text-left">
-              Discord
-            </h3>
-            <span className="text-base text-secondaryText pt-1 text-center sm:text-center md:text-left">
-              trungisreal
-            </span>
-          </div>
-        </Link>
-
-        {/* Discord Server */}
-        <Link
-          href="/discordserver"
-          id="discordserver"
-          className="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-link hover:bg-backgroundAccentLighter mx-auto sm:mx-auto md:mx-0"
-        >
-          <div className="py-2 px-2 md:flex">
-            <Image
-              src="/assets/links/discord.webp"
-              className="rounded-full sm:hidden md:inline"
-              alt="Discord"
-              width={80}
-              height={80}
-            />
-          </div>
-          <div className="flex flex-col py-4 px-6">
-            <h3 className="text-xl text-primaryText text-center sm:text-center md:text-left">
-              Discord Server
-            </h3>
-            <span className="text-base text-secondaryText pt-1 text-center sm:text-center md:text-left">
-              Trung Development
-            </span>
-          </div>
-        </Link>
-
-        {/* Github */}
-        <Link
-          href="/github"
-          id="github"
-          className="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-link hover:bg-backgroundAccentLighter mx-auto sm:mx-auto md:mx-0"
-        >
-          <div className="py-2 px-2 md:flex">
-            <Image
-              src="/assets/links/github.webp"
-              className="rounded-full sm:hidden md:inline"
-              alt="GitHub"
-              width={80}
-              height={80}
-            />
-          </div>
-          <div className="flex flex-col py-4 px-6">
-            <h3 className="text-xl text-primaryText text-center sm:text-center md:text-left">
-              GitHub
-            </h3>
-            <span className="text-base text-secondaryText pt-1 text-center sm:text-center md:text-left">
-              vuthanhtrung2010
-            </span>
-          </div>
-        </Link>
-
-        {/* Status */}
-        <Link
-          href="/status"
-          id="status"
-          className="bg-backgroundAccent my-1 h-24 text-primaryText flex-row flex rounded-link hover:bg-backgroundAccentLighter mx-auto sm:mx-auto md:mx-0"
-        >
-          <div className="py-2 px-2 md:flex">
-            <Image
-              src="/assets/links/status.webp"
-              className="rounded-full sm:hidden md:inline"
-              alt="Status"
-              width={80}
-              height={80}
-            />
-          </div>
-          <div className="flex flex-col py-4 px-6">
-            <h3 className="text-xl text-primaryText text-center sm:text-center md:text-left">
-              Status
-            </h3>
-            <span className="text-base text-secondaryText pt-1 text-center sm:text-center md:text-left">
-              status.devtrung.tech
-            </span>
-          </div>
-        </Link>
+          ))
+        }
       </section>
     </div>
   );

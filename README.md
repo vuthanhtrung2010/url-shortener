@@ -25,8 +25,8 @@ That's why I'm asking everyone to [**donate a little bit of money**](https://ko-
 <details>
   <summary>Click to expand</summary>
  
-  1. Download the [Source Code](https://github.com/vuthanhtrung2010/spotify-status)
-     * Either by: `git clone https://github.com/vuthanhtrung2010/spotify-status`
+  1. Download the [Source Code](https://github.com/vuthanhtrung2010/url-shortener)
+     * Either by: `git clone https://github.com/vuthanhtrung2010/url-shortener`
      * Or by downloading it as a zip from a branch
   
 </details>

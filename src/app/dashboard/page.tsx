@@ -79,7 +79,12 @@ export default function Dashboard() {
   return (
     <div className="p-8 max-w-md m-auto text-white text-center bg-backgroundColor">
       <header className="mb-6">
-        <h1 style={{ fontFamily: "'Leckerli One', cursive", fontSize: "3rem" }} className="text-3xl font-bold">Dashboard</h1>
+        <h1
+          style={{ fontFamily: "'Leckerli One', cursive", fontSize: "3rem" }}
+          className="text-3xl font-bold"
+        >
+          Dashboard
+        </h1>
       </header>
 
       <main>

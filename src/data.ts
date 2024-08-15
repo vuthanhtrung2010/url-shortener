@@ -37,7 +37,11 @@ export async function getURL(alias: string): Promise<string | null> {
 
 export async function createRedirect(url: string, aliases: string[]) {
   try {
-    console.log(chalk.blue(`Requested creating ${url} with aliases ${aliases.join(", ")}.`));
+    console.log(
+      chalk.blue(
+        `Requested creating ${url} with aliases ${aliases.join(", ")}.`,
+      ),
+    );
 
     for (const alias of aliases) {
       const data = await findUniqueLink(alias);
@@ -63,7 +67,9 @@ export async function createRedirect(url: string, aliases: string[]) {
       }
     }
 
-    console.log(chalk.green(`Created: ${url} with aliases ${aliases.join(", ")}.`));
+    console.log(
+      chalk.green(`Created: ${url} with aliases ${aliases.join(", ")}.`),
+    );
   } catch (error) {
     console.error("Error creating redirect:", error);
     throw new Error("Failed to create redirect.");
@@ -72,12 +78,18 @@ export async function createRedirect(url: string, aliases: string[]) {
 
 export async function updateRedirect(url: string, aliases: string[]) {
   try {
-    console.log(chalk.blue(`Requested updating ${url} with aliases ${aliases.join(", ")}.`));
+    console.log(
+      chalk.blue(
+        `Requested updating ${url} with aliases ${aliases.join(", ")}.`,
+      ),
+    );
 
     for (const alias of aliases) {
       const data = await findUniqueLink(alias);
       if (!data) {
-        console.log(chalk.red(`Cannot find existing aliases from ${aliases.join(", ")}`));
+        console.log(
+          chalk.red(`Cannot find existing aliases from ${aliases.join(", ")}`),
+        );
         throw new Error("Cannot find existing aliases.");
       }
     }
@@ -108,7 +120,11 @@ export async function updateRedirect(url: string, aliases: string[]) {
 
 export async function deleteRedirect(aliases: string[]) {
   try {
-    console.log(chalk.blue(`Requested deleting all URLs with aliases: ${aliases.join(", ")}.`));
+    console.log(
+      chalk.blue(
+        `Requested deleting all URLs with aliases: ${aliases.join(", ")}.`,
+      ),
+    );
 
     let count = 0;
     for (const alias of aliases) {
@@ -120,11 +136,15 @@ export async function deleteRedirect(aliases: string[]) {
     }
 
     if (count === 0) {
-      console.log(chalk.red(`Cannot find existing URLs from ${aliases.join(", ")}.`));
+      console.log(
+        chalk.red(`Cannot find existing URLs from ${aliases.join(", ")}.`),
+      );
       throw new Error(`Cannot find existing URL from ${aliases.join(", ")}.`);
     }
 
-    console.log(chalk.green(`Deleted ${count} URLs with aliases: ${aliases.join(", ")}.`));
+    console.log(
+      chalk.green(`Deleted ${count} URLs with aliases: ${aliases.join(", ")}.`),
+    );
   } catch (error) {
     console.error("Error deleting redirect:", error);
     throw new Error("Failed to delete redirect.");

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import { MainPage } from "@/components/main-page";
 import { DATA } from "@/config";
@@ -44,7 +43,7 @@ export default function Home() {
       >
         {DATA.links.map((link, index) => (
           <MainPage
-            key={index}
+            key={link.name}
             title={link.name}
             target={link.target}
             description={link.description}

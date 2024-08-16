@@ -115,36 +115,9 @@ export default function Dashboard() {
                     )
                   }
                 >
-                  <div className="form-input mb-4">
-                    <input
-                      type="password"
-                      name="password"
-                      className="w-full text-sm"
-                      required
-                    />
-                    <PasswordForm />
-                    <span className="input-border"></span>
-                  </div>
-                  <div className="form-input mb-4">
-                    <input
-                      type="text"
-                      name="alias"
-                      className="w-full text-sm"
-                      required
-                    />
-                    <RedirectPathForm />
-                    <span className="input-border"></span>
-                  </div>
-                  <div className="form-input mb-6">
-                    <input
-                      type="url"
-                      name="url"
-                      className="w-full text-sm"
-                      required
-                    />
-                    <RedirectURLForm />
-                    <span className="input-border"></span>
-                  </div>
+                  <PasswordForm />
+                  <RedirectPathForm />
+                  <RedirectURLForm />
                   <StarButton />
                 </form>
               </div>
@@ -174,36 +147,9 @@ export default function Dashboard() {
                     )
                   }
                 >
-                  <div className="form-input mb-4">
-                    <input
-                      type="password"
-                      name="password"
-                      className="w-full text-sm"
-                      required
-                    />
-                    <PasswordForm />
-                    <span className="input-border"></span>
-                  </div>
-                  <div className="form-input mb-4">
-                    <input
-                      type="text"
-                      name="alias"
-                      className="w-full text-sm"
-                      required
-                    />
-                    <RedirectPathForm />
-                    <span className="input-border"></span>
-                  </div>
-                  <div className="form-input mb-6">
-                    <input
-                      type="url"
-                      name="url"
-                      className="w-full text-sm"
-                      required
-                    />
-                    <RedirectURLForm />
-                    <span className="input-border"></span>
-                  </div>
+                  <PasswordForm />
+                  <RedirectPathForm />
+                  <RedirectURLForm />
                   <StarButton />
                 </form>
               </div>
@@ -232,26 +178,8 @@ export default function Dashboard() {
                   )
                 }
               >
-                <div className="form-input mb-4">
-                  <input
-                    type="password"
-                    name="password"
-                    className="w-full text-sm"
-                    required
-                  />
-                  <PasswordForm />
-                  <span className="input-border"></span>
-                </div>
-                <div className="form-input mb-4">
-                  <input
-                    type="text"
-                    name="alias"
-                    className="w-full text-sm"
-                    required
-                  />
-                  <RedirectPathForm />
-                  <span className="input-border"></span>
-                </div>
+                <PasswordForm />
+                <RedirectPathForm />
                 <StarButton />
               </form>
             </div>

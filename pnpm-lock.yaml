@@ -70,8 +70,8 @@ importers:
         version: 13.12.0
     devDependencies:
       '@types/node':
-        specifier: ^22.4.0
-        version: 22.4.0
+        specifier: ^22.4.1
+        version: 22.4.1
       '@types/react':
         specifier: ^18.3.3
         version: 18.3.3
@@ -384,8 +384,8 @@ packages:
       '@fortawesome/fontawesome-svg-core': ~1 || ~6
       react: '>=16.3'
 
-  '@hono/node-server@1.12.0':
-    resolution: {integrity: sha512-e6oHjNiErRxsZRZBmc2KucuvY3btlO/XPncIpP2X75bRdTilF9GLjm3NHvKKunpJbbJJj31/FoPTksTf8djAVw==}
+  '@hono/node-server@1.12.1':
+    resolution: {integrity: sha512-C9l+08O8xtXB7Ppmy8DjBFH1hYji7JKzsU32Yt1poIIbdPp6S7aOI8IldDHD9YFJ55lv2c21ovNrmxatlHfhAg==}
     engines: {node: '>=18.14.1'}
 
   '@humanwhocodes/config-array@0.11.14':
@@ -1000,8 +1000,8 @@ packages:
   '@types/mysql@2.15.22':
     resolution: {integrity: sha512-wK1pzsJVVAjYCSZWQoWHziQZbNggXFDUEIGf54g4ZM/ERuP86uGdWeKZWMYlqTPMZfHJJvLPyogXGvCOg87yLQ==}
 
-  '@types/node@22.4.0':
-    resolution: {integrity: sha512-49AbMDwYUz7EXxKU/r7mXOsxwFr4BYbvB7tWYxVuLdb2ibd30ijjXINSMAHiEEZk5PCRBmW1gUeisn2VMKt3cQ==}
+  '@types/node@22.4.1':
+    resolution: {integrity: sha512-1tbpb9325+gPnKK0dMm+/LMriX0vKxf6RnB0SZUqfyVkQ4fMgUSySqhxE/y8Jvs4NyF1yHzTfG9KlnkIODxPKg==}
 
   '@types/pg-pool@2.0.4':
     resolution: {integrity: sha512-qZAvkv1K3QbmHHFYSNRYPkRjOWRLBYrL4B9c+wG0GSVGBw0NtJwPcgx/DSddeDJvRGMHCEQ4VMEVfuJ/0gZ3XQ==}
@@ -1496,8 +1496,8 @@ packages:
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
 
-  electron-to-chromium@1.5.10:
-    resolution: {integrity: sha512-C3RDERDjrNW262GCRvpoer3a0Ksd66CtgDLxMHhzShQ8fhL4kwnpVXsJPAKg9xJjIROXUbLBrvtOzVAjALMIWA==}
+  electron-to-chromium@1.5.11:
+    resolution: {integrity: sha512-R1CccCDYqndR25CaXFd6hp/u9RaaMcftMkphmvuepXr5b1vfLkRml6aWVeBhXJ7rbevHkKEMJtz8XqPf7ffmew==}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -1878,8 +1878,8 @@ packages:
   hoist-non-react-statics@3.3.2:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
 
-  hono@4.5.5:
-    resolution: {integrity: sha512-fXBXHqaVfimWofbelLXci8pZyIwBMkDIwCa4OwZvK+xVbEyYLELVP4DfbGaj1aEM6ZY3hHgs4qLvCO2ChkhgQw==}
+  hono@4.5.6:
+    resolution: {integrity: sha512-9SuUC/zLQv8YAcnIxJko0KCeLI0Q6menPsDWuJ9jaH+r8ZkVXeLqeLs1QJXCPKKbURAWj9x0SJBSFh803EnAUw==}
     engines: {node: '>=16.0.0'}
 
   https-proxy-agent@5.0.1:
@@ -3441,7 +3441,7 @@ snapshots:
       prop-types: 15.8.1
       react: 18.3.1
 
-  '@hono/node-server@1.12.0': {}
+  '@hono/node-server@1.12.1': {}
 
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
@@ -3580,14 +3580,14 @@ snapshots:
       '@axiomhq/js': 1.0.0-rc.3
       '@babel/core': 7.24.6
       '@babel/types': 7.24.6
-      '@hono/node-server': 1.12.0
+      '@hono/node-server': 1.12.1
       '@million/install': 0.0.18
       '@rollup/pluginutils': 5.1.0(rollup@3.29.4)
       '@rrweb/types': 2.0.0-alpha.16
       babel-plugin-syntax-hermes-parser: 0.21.1
       ci-info: 4.0.0
       esbuild: 0.20.2
-      hono: 4.5.5
+      hono: 4.5.6
       isomorphic-fetch: 3.0.0
       nanoid: 5.0.7
       pako: 2.1.0
@@ -4155,7 +4155,7 @@ snapshots:
 
   '@types/connect@3.4.36':
     dependencies:
-      '@types/node': 22.4.0
+      '@types/node': 22.4.1
 
   '@types/css-font-loading-module@0.0.7': {}
 
@@ -4177,9 +4177,9 @@ snapshots:
 
   '@types/mysql@2.15.22':
     dependencies:
-      '@types/node': 22.4.0
+      '@types/node': 22.4.1
 
-  '@types/node@22.4.0':
+  '@types/node@22.4.1':
     dependencies:
       undici-types: 6.19.6
 
@@ -4189,7 +4189,7 @@ snapshots:
 
   '@types/pg@8.6.1':
     dependencies:
-      '@types/node': 22.4.0
+      '@types/node': 22.4.1
       pg-protocol: 1.6.1
       pg-types: 2.2.0
 
@@ -4513,7 +4513,7 @@ snapshots:
   browserslist@4.23.3:
     dependencies:
       caniuse-lite: 1.0.30001651
-      electron-to-chromium: 1.5.10
+      electron-to-chromium: 1.5.11
       node-releases: 2.0.18
       update-browserslist-db: 1.1.0(browserslist@4.23.3)
 
@@ -4754,7 +4754,7 @@ snapshots:
 
   eastasianwidth@0.2.0: {}
 
-  electron-to-chromium@1.5.10: {}
+  electron-to-chromium@1.5.11: {}
 
   emoji-regex@8.0.0: {}
 
@@ -5326,7 +5326,7 @@ snapshots:
     dependencies:
       react-is: 16.13.1
 
-  hono@4.5.5: {}
+  hono@4.5.6: {}
 
   https-proxy-agent@5.0.1:
     dependencies:
@@ -5537,7 +5537,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 22.4.0
+      '@types/node': 22.4.1
       merge-stream: 2.0.0
       supports-color: 8.1.1
 

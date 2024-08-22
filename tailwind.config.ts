@@ -29,6 +29,7 @@ const config: Config = {
       link: "12px",
       md: "0.375rem",
       none: "0",
+      xl: "0.75rem",
       sm: "0.125rem",
       website: "10px",
     },

@@ -1,14 +1,6 @@
 name: Next.js Build Test
 
-on:
-  push:
-    branches:
-      - main
-      - beta
-  pull_request:
-    branches:
-      - main
-      - beta
+on: [push, pull_request]
 
 jobs:
   build:

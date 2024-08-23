@@ -1,7 +1,7 @@
 "use client";
 
+import { SuccessToast } from "@/components/Toasts/success";
 import { useState } from "react";
-import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPenToSquare,
@@ -12,6 +12,7 @@ import { StarButton } from "@/components/star-button";
 import { PasswordForm } from "@/components/password-from";
 import { RedirectPathForm } from "@/components/redirect-path-form";
 import { RedirectURLForm } from "@/components/redirect-url-form";
+import { ErrorToast } from "@/components/Toasts/error";
 
 export default function Dashboard() {
   const [isCreateShown, setIsCreateShown] = useState(false);
@@ -70,7 +71,7 @@ export default function Dashboard() {
     setTimeout(() => {
       setMessage("");
       setShowSuccess(false);
-    }, 2500);
+    }, 5000);
   };
 
   const toggleForm = (formType: "create" | "update" | "delete") => {
@@ -186,20 +187,8 @@ export default function Dashboard() {
           )}
         </div>
         {message && (
-          <div
-            className={`mt-4 p-4 ${showSuccess ? "bg-green-600" : "bg-red-600"
-              } text-white rounded-lg`}
-          >
-            {showSuccess && (
-              <Image
-                src="/assets/checkmark.svg"
-                alt="Success"
-                width={20}
-                height={20}
-                className="inline-block mr-2"
-              />
-            )}
-            {message}
+          <div className="bottom-right space-y-3">
+            {showSuccess ? <SuccessToast message={message} /> : <ErrorToast message={message} />}
           </div>
         )}
       </main>

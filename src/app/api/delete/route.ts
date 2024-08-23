@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { deleteRedirect } from "../../../data";
+import { deleteRedirect } from "@/data";
 
-export async function DELETE(request: Request) {
+export async function POST(request: Request) {
   const formData = await request.formData();
   const password = formData.get("password") as string;
   const alias = formData.get("alias") as string;

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { updateRedirect } from "../../../data";
 
-export async function PATCH(request: Request) {
+export async function POST(request: Request) {
   const formData = await request.formData();
   const password = formData.get("password") as string;
   const alias = formData.get("alias") as string;

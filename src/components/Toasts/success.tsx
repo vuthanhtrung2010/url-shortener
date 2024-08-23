@@ -1,4 +1,4 @@
-export function SuccessToast({ message }: { message: string }) {
+export function SuccessToast({ message }: { readonly message: string }) {
     return (
         <div id="success-toast" className="hs-removing:translate-x-5 hs-removing:opacity-0 transition duration-300 max-w-xs bg-white border border-gray-200 rounded-xl shadow-lg dark:bg-neutral-800 dark:border-neutral-700" role="alert" tabIndex={-1} aria-labelledby="hs-toast-success-example-label">
             <div className="flex p-4">

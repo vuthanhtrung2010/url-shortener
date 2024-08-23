@@ -2,8 +2,8 @@ export function RedirectURLForm() {
     return (
         <div className="form-input mb-4">
             <input
-                type="text"
-                name="alias"
+                type="url"
+                name="url"
                 className="w-full text-sm"
                 required
             />

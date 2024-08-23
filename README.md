@@ -55,7 +55,7 @@ That's why I'm asking everyone to [**donate a little bit of money**](https://ko-
 
 1. `./.env`
    - `DATABASE_URL` get from your self hosted database. See full list of supported database by prisma ORM [here](https://www.prisma.io/docs/orm/reference/supported-databases).
-   - `password` your desired password for `/dashboard` to create/update/delete URLs.
+   - `PASSWORD_HASH` your hased desired password for `/dashboard` to create/update/delete URLs, do `npm run hash` or `pnpm hash` and type your password, fill in the variable to the variable named `PASSWORD_HASH` in `.env` file.
    - `PORT` is your port number the website listening to. Default listening port will be 3000.
    - `SENTRY_AUTH_TOKEN` (optional for who want to track errors/performance): Get it from [Sentry Dashboard](https://sentry.io/settings/auth-tokens/).
    - `SENTRY_DSN_ADDRESS` (optional for who want to track errors/performance): Get it from your Sentry project.

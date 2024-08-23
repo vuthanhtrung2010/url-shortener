@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createRedirect } from "../../../data";
+import { checkPassword } from "@/scripts/checkPassword";
 
 export async function POST(request: Request) {
   const formData = await request.formData();
@@ -8,7 +9,7 @@ export async function POST(request: Request) {
   const alias = formData.get("alias") as string;
   const url = formData.get("url") as string;
 
-  if (!process.env.password) {
+  if (!process.env.PASSWORD_HASH) {
     return NextResponse.json(
       {
         success: false,
@@ -18,7 +19,7 @@ export async function POST(request: Request) {
     );
   }
 
-  if (password !== process.env.password) {
+  if (!checkPassword(password)) {
     return NextResponse.json(
       { success: false, message: "Invalid password." },
       { status: 401 },

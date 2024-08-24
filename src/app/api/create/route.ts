@@ -12,7 +12,7 @@ export async function POST(request: Request) {
   let baseURL = formData.get("baseURL") as string;
 
   if (!alias) {
-    alias = GenenerateRandomAlias() as unknown as string;
+    alias = await GenenerateRandomAlias() as unknown as string;
   }
 
   if (!baseURL) {

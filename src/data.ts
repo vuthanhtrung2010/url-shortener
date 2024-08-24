@@ -4,14 +4,17 @@ import * as Sentry from "@sentry/nextjs";
 import { isURL } from "validator";
 
 export const prisma = new PrismaClient();
+export const cache = new Map<string, any>();
 
 // Helper function to find a unique link
 async function findUniqueLink(alias: string) {
-  return await prisma.links.findUnique({
-    where: {
-      alias,
-    },
-  });
+  if (cache.has(alias)) {
+    return cache.get(alias);
+  } else {
+    const result = await prisma.links.findUnique({ where: { alias } });
+    cache.set(alias, result);
+    return result;
+  }
 }
 
 export async function getURL(alias: string): Promise<string | null> {
@@ -58,9 +61,10 @@ export async function createRedirect(url: string, aliases: string[]) {
 
     for (const alias of aliases) {
       try {
-        await prisma.links.create({
+        const data = await prisma.links.create({
           data: { link: url, alias, hits: 0 },
         });
+        cache.set(alias, data);
       } catch (e) {
         console.error(e);
         Sentry.captureException(e);
@@ -101,10 +105,11 @@ export async function updateRedirect(url: string, aliases: string[]) {
 
     for (const alias of aliases) {
       try {
-        await prisma.links.update({
+        const data = await prisma.links.update({
           where: { alias },
           data: { link: url },
         });
+        cache.set(alias, data);
       } catch (e) {
         console.error(e);
         Sentry.captureException(e);
@@ -132,6 +137,7 @@ export async function deleteRedirect(aliases: string[]) {
       if (!data) continue;
 
       await prisma.links.delete({ where: { alias } });
+      cache.delete(alias);
       count++;
     }
 

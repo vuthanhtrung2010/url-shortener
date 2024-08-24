@@ -60,6 +60,12 @@ That's why I'm asking everyone to [**donate a little bit of money**](https://ko-
    - `SENTRY_AUTH_TOKEN` (optional for who want to track errors/performance): Get it from [Sentry Dashboard](https://sentry.io/settings/auth-tokens/).
    - `SENTRY_DSN_ADDRESS` (optional for who want to track errors/performance): Get it from your Sentry project.
 
+2. `./src/config.tsx`
+    - `name` fill your name. Make sure it is sort.
+    - `profilePicture` the link to your profile picture, default profile picture is in `./public/assets/pfp.webp`. If you have different file name/extension after uploading, replace it.
+    - `links` is all your links with the image, image located at `./public/assets/links`. Put your files there and replace the sub variable.
+    - `baseURL` your base URL. Must be filled in to prevent error. You could use ShareX to shorten your URL too! Put it as your main route. Eg: `https://links.devtrung.tech`, `https://links.devtrung.tech/` **NOT** `https://yourdomain.com/sth`.
+
 </details>
 
 # Contributing

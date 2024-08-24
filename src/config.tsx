@@ -39,4 +39,5 @@ export const DATA = {
       icon: "/assets/links/status.webp",
     },
   ],
+  baseURL: "https://links.devtrung.tech",
 } as const;

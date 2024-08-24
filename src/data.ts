@@ -165,3 +165,12 @@ export async function getData(alias: string) {
     throw new Error("Failed to get data.");
   }
 }
+
+export async function GenenerateRandomAlias() {
+  const randomAlias = Math.random().toString(36).substring(2, 8);
+  const data = await findUniqueLink(randomAlias);
+  if (data) {
+    return GenenerateRandomAlias();
+  }
+  return randomAlias;
+}

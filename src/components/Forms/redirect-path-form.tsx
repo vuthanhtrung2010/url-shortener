@@ -1,11 +1,11 @@
-export function RedirectPathForm() {
+export function RedirectPathForm({ required_form }: { required_form: boolean }) {
     return (
         <div className="form-input mb-4">
             <input
                 type="text"
                 name="alias"
                 className="w-full text-sm"
-                required
+                required={required_form}
             />
             <label>
                 <span style={{ transitionDelay: "0ms" }}>R</span>

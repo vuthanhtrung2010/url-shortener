@@ -9,9 +9,9 @@ import {
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import { StarButton } from "@/components/star-button";
-import { PasswordForm } from "@/components/password-from";
-import { RedirectPathForm } from "@/components/redirect-path-form";
-import { RedirectURLForm } from "@/components/redirect-url-form";
+import { PasswordForm } from "@/components/Forms/password-from";
+import { RedirectPathForm } from "@/components/Forms/redirect-path-form";
+import { RedirectURLForm } from "@/components/Forms/redirect-url-form";
 import { ErrorToast } from "@/components/Toasts/error";
 
 export default function Dashboard() {
@@ -117,7 +117,7 @@ export default function Dashboard() {
                   }
                 >
                   <PasswordForm />
-                  <RedirectPathForm />
+                  <RedirectPathForm required_form={false} />
                   <RedirectURLForm />
                   <StarButton />
                 </form>
@@ -149,7 +149,7 @@ export default function Dashboard() {
                   }
                 >
                   <PasswordForm />
-                  <RedirectPathForm />
+                  <RedirectPathForm required_form={true} />
                   <RedirectURLForm />
                   <StarButton />
                 </form>
@@ -180,7 +180,7 @@ export default function Dashboard() {
                 }
               >
                 <PasswordForm />
-                <RedirectPathForm />
+                <RedirectPathForm required_form={true} />
                 <StarButton />
               </form>
             </div>

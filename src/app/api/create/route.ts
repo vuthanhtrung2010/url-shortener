@@ -43,10 +43,12 @@ export async function POST(request: Request) {
 
   try {
     await createRedirect(url, mapped_alias);
+    const newURL = new URL(alias, baseURL).href;
+
     return NextResponse.json({
       success: true,
-      message: "Redirect created successfully.",
-      url: `${new URL(alias, baseURL).href}`,
+      message: `Redirect created successfully.\n${newURL}`,
+      url: `${newURL}`,
     });
   } catch (error) {
     return NextResponse.json(

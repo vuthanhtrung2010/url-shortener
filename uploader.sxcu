@@ -1,0 +1,12 @@
+{
+  "Name": "Trung's URL Shortener",
+  "DestinationType": "URLShortener, URLSharingService",
+  "RequestMethod": "POST",
+  "RequestURL": "https://yourdomain.com/api/create",
+  "URL": "{json:url}",
+  "Body": "MultipartFormData",
+  "Arguments": {
+	"password": "your_password_here",
+	"url": "{input}"
+  }
+}

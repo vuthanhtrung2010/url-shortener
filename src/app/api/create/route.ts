@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { createRedirect, GenenerateRandomAlias } from "../../../data";
+import { createRedirect, GenerateRandomAlias } from "../../../data";
 import { compareSync } from "bcrypt";
 import { DATA } from "@/config";
 
@@ -12,7 +12,7 @@ export async function POST(request: Request) {
   let baseURL = formData.get("baseURL") as string;
 
   if (!alias) {
-    alias = await GenenerateRandomAlias() as unknown as string;
+    alias = await GenerateRandomAlias() as unknown as string;
   }
 
   if (!baseURL) {
@@ -30,6 +30,7 @@ export async function POST(request: Request) {
   }
 
   const checkPassword = compareSync(password, process.env.PASSWORD_HASH);
+  console.log(process.env.PASSWORD_HASH);
   if (!checkPassword) {
     return NextResponse.json(
       { success: false, message: "Invalid password." },

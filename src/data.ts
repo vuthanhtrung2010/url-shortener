@@ -166,11 +166,11 @@ export async function getData(alias: string) {
   }
 }
 
-export async function GenenerateRandomAlias(): Promise<string> {
+export async function GenerateRandomAlias(): Promise<string> {
   const randomAlias: string = Math.random().toString(36).substring(2, 8);
   const data = await findUniqueLink(randomAlias);
   if (data) {
-    return GenenerateRandomAlias();
+    return GenerateRandomAlias();
   }
   return randomAlias;
 }

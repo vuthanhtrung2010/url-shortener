@@ -3,8 +3,10 @@ import chalk from "chalk";
 import * as Sentry from "@sentry/nextjs";
 import { isURL } from "validator";
 
-export const prisma = new PrismaClient();
+const prisma = new PrismaClient();
 export const cache = new Map<string, any>();
+
+export default prisma;
 
 // Helper function to find a unique link
 async function findUniqueLink(alias: string) {
@@ -38,7 +40,7 @@ export async function getURL(alias: string): Promise<string | null> {
   }
 }
 
-export async function createRedirect(url: string, aliases: string[]) {
+export async function createRedirect(url: string, aliases: string[]): Promise<void> {
   try {
     console.log(
       chalk.blue(

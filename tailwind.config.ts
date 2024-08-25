@@ -8,7 +8,7 @@ const config: Config = {
     "./node_modules/preline/preline.js",
   ],
   plugins: [
-    require("preline/plugin")
+    require("preline/plugin"),
   ],
   theme: {
     extend: {

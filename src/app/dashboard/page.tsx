@@ -60,18 +60,18 @@ export default function Dashboard() {
     }
 
     if (responseOk) {
-      setMessage(successMessage);
+      setMessage(result.message || successMessage);
       setShowSuccess(true);
       form.reset();
     } else {
-      setMessage(result.message);
+      setMessage(result.message || "An error occurred. Please try again later.");
       setShowSuccess(false);
     }
 
     setTimeout(() => {
       setMessage("");
       setShowSuccess(false);
-    }, 5000);
+    }, 10000);
   };
 
   const toggleForm = (formType: "create" | "update" | "delete") => {

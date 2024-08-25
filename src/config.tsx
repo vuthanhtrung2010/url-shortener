@@ -40,5 +40,4 @@ export const DATA = {
     },
   ],
   baseURL: "https://links.devtrung.tech",
-  PASSWORD_HASH: "$2b$11$IwE1wA1al52CaKR9BSVes.nsOTLQgoM4mQkVU9jU0WsIP.2MW74Ua"
 } as const;

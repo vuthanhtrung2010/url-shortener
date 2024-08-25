@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { deleteRedirect } from "@/data";
-import { checkPassword } from "@/scripts/checkPassword";
+import { compareSync } from "bcrypt";
 
 export async function POST(request: Request) {
   const formData = await request.formData();
@@ -17,9 +17,10 @@ export async function POST(request: Request) {
     );
   }
 
-  if (!checkPassword(password)) {
+  const checkPassword = compareSync(password, process.env.PASSWORD_HASH);
+  if (!checkPassword) {
     return NextResponse.json(
-      { success: false, message: "Invalid password" },
+      { success: false, message: "Invalid password." },
       { status: 401 },
     );
   }

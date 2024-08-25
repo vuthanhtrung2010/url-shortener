@@ -1,7 +1,5 @@
-import { createHash } from 'crypto';
+import { hashSync } from 'bcrypt';
 
-export function hash(input: string): string {
-    const hash = createHash('sha3-512');
-    hash.update(input);
-    return hash.digest('hex');
+export function hash(password: string, saltRounds = 11) {
+    return hashSync(password, saltRounds);
 }

@@ -2,6 +2,7 @@ import { PrismaClient } from "@prisma/client";
 import chalk from "chalk";
 import * as Sentry from "@sentry/nextjs";
 import { isURL } from "validator";
+import { randomBytes } from "node:crypto";
 
 const prisma = new PrismaClient();
 export const cache = new Map<string, any>();
@@ -169,7 +170,8 @@ export async function getData(alias: string) {
 }
 
 export async function GenerateRandomAlias(): Promise<string> {
-  const randomAlias: string = Math.random().toString(36).substring(2, 8);
+  const buf = randomBytes(4).toString('hex');
+  const randomAlias: string = buf.substring(0, 8);
   const data = await findUniqueLink(randomAlias);
   if (data) {
     return GenerateRandomAlias();

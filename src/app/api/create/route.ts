@@ -29,8 +29,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const checkPassword = compareSync(password, process.env.PASSWORD_HASH);
-  console.log(process.env.PASSWORD_HASH);
+  const checkPassword = compareSync(password, Buffer.from(process.env.PASSWORD_HASH, "base64").toString("utf-8"));
   if (!checkPassword) {
     return NextResponse.json(
       { success: false, message: "Invalid password." },

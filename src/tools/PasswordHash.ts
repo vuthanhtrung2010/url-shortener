@@ -15,7 +15,7 @@ async function hashPassword() {
             return;
         }
 
-        const hashedPassword = hash(password);
+        const hashedPassword = Buffer.from(hash(password)).toString('base64');
         console.log("Hashed password: ", hashedPassword, '\n', "Please put it in your environment variable file to use your password!");
     });
 }

@@ -1,0 +1,18 @@
+version = 1
+
+test_patterns = ["**/*.test.ts"]
+
+exclude_patterns = ["prisma/**"]
+
+[[analyzers]]
+name = "javascript"
+
+  [analyzers.meta]
+  plugins = ["react"]
+  environment = [
+    "nodejs",
+    "browser"
+  ]
+
+[[transformers]]
+name = "prettier"

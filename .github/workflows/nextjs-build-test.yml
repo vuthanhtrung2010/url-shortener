@@ -1,16 +1,13 @@
 name: Next.js Build Test
 
-on:
-  push:
-    branches:
-      - main
+on: [push, pull_request]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [22.x, 21.x, 20.x, "latest"]
+        node-version: [21.x, 20.x]
 
     # Service containers to run with `runner-job`
     services:

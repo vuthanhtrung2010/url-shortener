@@ -2,6 +2,13 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@font-face {
+  font-family: "Leckerli One";
+  src: url("./fonts/LeckerliOne-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 body,
 html {
   background-color: #12141d;
@@ -267,4 +274,11 @@ html {
 
 .fil0 {
   fill: #fffdef;
+}
+
+.bottom-right {
+  position: fixed;
+  right: 20px;
+  bottom: 40px;
+  z-index: 1000;
 }

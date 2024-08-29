@@ -25,8 +25,8 @@ That's why I'm asking everyone to [**donate a little bit of money**](https://ko-
 <details>
   <summary>Click to expand</summary>
  
-  1. Download the [Source Code](https://github.com/vuthanhtrung2010/spotify-status)
-     * Either by: `git clone https://github.com/vuthanhtrung2010/spotify-status`
+  1. Download the [Source Code](https://github.com/vuthanhtrung2010/url-shortener)
+     * Either by: `git clone https://github.com/vuthanhtrung2010/url-shortener`
      * Or by downloading it as a zip from a branch
   
 </details>
@@ -54,14 +54,31 @@ That's why I'm asking everyone to [**donate a little bit of money**](https://ko-
 **NOTE:** _You can do the exact same configuration inside of the `.env.example` file, just make sure to rename it to `.env` or use environment variables!_
 
 1. `./.env`
+
    - `DATABASE_URL` get from your self hosted database. See full list of supported database by prisma ORM [here](https://www.prisma.io/docs/orm/reference/supported-databases).
-   - `password` your desired password for `/dashboard` to create/update/delete URLs.
+   - `PASSWORD_HASH` your hased desired password for `/dashboard` to create/update/delete URLs, do `npm run hash` or `pnpm hash` and type your password, fill in the variable to the variable named `PASSWORD_HASH` in `.env` file.
    - `PORT` is your port number the website listening to. Default listening port will be 3000.
    - `SENTRY_AUTH_TOKEN` (optional for who want to track errors/performance): Get it from [Sentry Dashboard](https://sentry.io/settings/auth-tokens/).
    - `SENTRY_DSN_ADDRESS` (optional for who want to track errors/performance): Get it from your Sentry project.
 
+2. `./src/config.tsx`
+   - `name` fill your name. Make sure it is sort.
+   - `profilePicture` the link to your profile picture, default profile picture is in `./public/assets/pfp.webp`. If you have different file name/extension after uploading, replace it.
+   - `links` is all your links with the image, image located at `./public/assets/links`. Put your files there and replace the sub variable.
+   - `baseURL` your base URL. Must be filled in to prevent error. You could use ShareX to shorten your URL too! Put it as your main route. Eg: `https://links.devtrung.tech`, `https://links.devtrung.tech/` **NOT** `https://yourdomain.com/sth`.
+
 </details>
 
+## Want to use ShareX to Shorten URLs?
+
+<details>
+  <summary>Click to expand</summary>
+
+1. Get ShareX from https://getsharex.com/
+2. Change the line have variable `RequestURL` your real URL. Eg: `https://links.devtrung.tech/api/create`.
+3. Open the file and choose yes when it asks you to use default URL Shortener is your URL Shortener.
+
+</details>
 # Contributing
 
 > If you want to help improve the code, fix spelling or design Errors or if possible even code errors, you may create PULL REQUESTS.

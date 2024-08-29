@@ -1,13 +1,14 @@
 import { NextResponse } from "next/server";
 import { updateRedirect } from "../../../data";
+import { compareSync } from "bcrypt";
 
-export async function PATCH(request: Request) {
+export async function POST(request: Request) {
   const formData = await request.formData();
   const password = formData.get("password") as string;
   const alias = formData.get("alias") as string;
   const url = formData.get("url") as string;
 
-  if (!process.env.password) {
+  if (!process.env.PASSWORD_HASH) {
     return NextResponse.json(
       {
         success: false,
@@ -17,9 +18,10 @@ export async function PATCH(request: Request) {
     );
   }
 
-  if (password !== process.env.password) {
+  const checkPassword = compareSync(password, Buffer.from(process.env.PASSWORD_HASH, "base64").toString("utf-8"));
+  if (!checkPassword) {
     return NextResponse.json(
-      { success: false, message: "Invalid password" },
+      { success: false, message: "Invalid password." },
       { status: 401 },
     );
   }

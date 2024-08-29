@@ -1,14 +1,25 @@
 import { NextResponse } from "next/server";
-import { createRedirect } from "../../../data";
+import { createRedirect, GenerateRandomAlias } from "../../../data";
+import { compareSync } from "bcrypt";
+import { DATA } from "@/config";
 
 export async function POST(request: Request) {
   const formData = await request.formData();
 
   const password = formData.get("password") as string;
-  const alias = formData.get("alias") as string;
+  let alias = formData.get("alias") as string;
   const url = formData.get("url") as string;
+  let baseURL = formData.get("baseURL") as string;
 
-  if (!process.env.password) {
+  if (!alias) {
+    alias = await GenerateRandomAlias() as unknown as string;
+  }
+
+  if (!baseURL) {
+    baseURL = DATA.baseURL || "https://links.devtrung.tech";
+  }
+
+  if (!process.env.PASSWORD_HASH) {
     return NextResponse.json(
       {
         success: false,
@@ -18,7 +29,8 @@ export async function POST(request: Request) {
     );
   }
 
-  if (password !== process.env.password) {
+  const checkPassword = compareSync(password, Buffer.from(process.env.PASSWORD_HASH, "base64").toString("utf-8"));
+  if (!checkPassword) {
     return NextResponse.json(
       { success: false, message: "Invalid password." },
       { status: 401 },
@@ -32,9 +44,12 @@ export async function POST(request: Request) {
 
   try {
     await createRedirect(url, mapped_alias);
+    const newURL = new URL(alias, baseURL).href;
+
     return NextResponse.json({
       success: true,
-      message: "Redirect created successfully.",
+      message: `Redirect created successfully.\n${newURL}`,
+      url: `${newURL}`,
     });
   } catch (error) {
     return NextResponse.json(

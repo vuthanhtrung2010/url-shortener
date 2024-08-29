@@ -16,7 +16,7 @@ datasource db {
 model Links {
   id        Int      @id @default(autoincrement())
   link      String
-  alias   String   @unique
+  alias     String   @unique
   createdAt DateTime @default(now())
   hits      Int
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../styles.css";
+import PrelineScript from "@/components/PrelineScript";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,6 +31,7 @@ export default function RootLayout({
           </div>
         </div>
       </body>
+      <PrelineScript />
     </html>
   );
 }

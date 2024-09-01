@@ -43,7 +43,15 @@ export async function POST(request: Request) {
     .filter((a) => a);
 
   try {
-    await createRedirect(url, mapped_alias);
+    const success = await createRedirect(url, mapped_alias);
+    
+    if (success != 0) {
+      return NextResponse.json(
+        { success: false, message: success === 1 ? "Alias already exists." : "Failed to create redirect." },
+        { status: 500 },
+      );
+    }
+
     const newURL = new URL(alias, baseURL).href;
 
     return NextResponse.json({

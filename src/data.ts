@@ -41,7 +41,7 @@ export async function getURL(alias: string): Promise<string | null> {
   }
 }
 
-export async function createRedirect(url: string, aliases: string[]): Promise<void> {
+export async function createRedirect(url: string, aliases: string[]): Promise<number> {
   try {
     console.log(
       chalk.blue(
@@ -53,13 +53,13 @@ export async function createRedirect(url: string, aliases: string[]): Promise<vo
       const data = await findUniqueLink(alias);
       if (data) {
         console.log(chalk.red("Some aliases already exist."));
-        throw new Error("Some aliases already exist.");
+        return 1;
       }
     }
 
     if (!isURL(url)) {
-      console.log(chalk.red("Invalid URL."));
-      throw new Error("Invalid URL.");
+      console.log(chalk.red("Invalid URL."), url);
+      return 2;
     }
 
     for (const alias of aliases) {
@@ -77,6 +77,8 @@ export async function createRedirect(url: string, aliases: string[]): Promise<vo
     console.log(
       chalk.green(`Created: ${url} with aliases ${aliases.join(", ")}.`),
     );
+
+    return 0;
   } catch (error) {
     console.error("Error creating redirect:", error);
     throw new Error("Failed to create redirect.");

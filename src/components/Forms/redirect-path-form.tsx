@@ -1,4 +1,4 @@
-export function RedirectPathForm({ required_form }: { required_form: boolean }) {
+export function RedirectPathForm({ required_form }: { readonly required_form: boolean }) {
     return (
         <div className="form-input mb-4">
             <input

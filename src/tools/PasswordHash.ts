@@ -20,4 +20,4 @@ async function hashPassword() {
     });
 }
 
-hashPassword();
+hashPassword().then(() => {});

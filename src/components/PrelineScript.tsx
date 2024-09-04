@@ -20,7 +20,7 @@ export default function PrelineScript() {
       window.HSStaticMethods.autoInit();
     };
 
-    loadPreline();
+    loadPreline().then(() => {});
   }, [path]);
 
   return null;

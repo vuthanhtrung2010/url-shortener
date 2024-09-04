@@ -99,13 +99,13 @@ export async function updateRedirect(url: string, aliases: string[]) {
         console.log(
           chalk.red(`Cannot find existing aliases from ${aliases.join(", ")}`),
         );
-        throw new Error("Cannot find existing aliases.");
+        return;
       }
     }
 
     if (!isURL(url)) {
       console.log(chalk.red("Invalid URL."));
-      throw new Error("Invalid URL.");
+      return;
     }
 
     for (const alias of aliases) {
@@ -150,7 +150,7 @@ export async function deleteRedirect(aliases: string[]) {
       console.log(
         chalk.red(`Cannot find existing URLs from ${aliases.join(", ")}.`),
       );
-      throw new Error(`Cannot find existing URL from ${aliases.join(", ")}.`);
+      return;
     }
 
     console.log(

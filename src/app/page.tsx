@@ -41,7 +41,7 @@ export default function Home() {
         id="links"
         className="w-10/12 flex flex-col mx-auto mb-10 mt-1 md:w-8/12 lg:w-4/12"
       >
-        {DATA.links.map((link, index) => (
+        {DATA.links.map((link) => (
           <MainPage
             key={link.name}
             title={link.name}

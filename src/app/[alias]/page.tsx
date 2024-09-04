@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { getURL } from "../../data";
+import { getURL } from "@/data";
 import chalk from "chalk";
 
 export const dynamic = "force-dynamic";

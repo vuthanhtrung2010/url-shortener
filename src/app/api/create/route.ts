@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { createRedirect, GenerateRandomAlias } from "../../../data";
+import { createRedirect, GenerateRandomAlias } from "@/data";
 import { compareSync } from "bcrypt";
 import { DATA } from "@/config";
 

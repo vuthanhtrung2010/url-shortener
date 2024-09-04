@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { updateRedirect } from "../../../data";
+import { updateRedirect } from "@/data";
 import { compareSync } from "bcrypt";
 
 export async function POST(request: Request) {

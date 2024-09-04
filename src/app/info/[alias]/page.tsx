@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import chalk from "chalk";
 import moment from "moment";
-import { getData } from "../../../data";
+import { getData } from "@/data";
 
 interface Props {
   params: Readonly<{ alias: string }>;

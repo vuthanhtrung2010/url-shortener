@@ -8,6 +8,16 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Trung's URL Shortener",
   description: "Trung's URL Shortener",
+  openGraph: {
+    title: "Vũ Thành Trung",
+    images: ["/assets/banner.webp"],
+  },
+  twitter: {
+    title: "Vũ Thành Trung",
+    card: "summary_large_image",
+    description: "A website which displays my Spotify status.",
+    images: ["/assets/banner.webp"],
+  },
 };
 
 export default function RootLayout({

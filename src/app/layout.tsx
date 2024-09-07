@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   description: "Trung's URL Shortener",
   openGraph: {
     title: "Vũ Thành Trung",
+    description: "Trung's URL Shortener",
     images: ["/assets/banner.webp"],
   },
   twitter: {

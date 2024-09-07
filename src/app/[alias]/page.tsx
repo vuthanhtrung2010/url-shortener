@@ -4,6 +4,10 @@ import chalk from "chalk";
 
 export const dynamic = "force-dynamic";
 
+interface RedirectError extends Error {
+  digest?: string;
+}
+
 export default async function AliasPage({
   params,
 }: {
@@ -33,7 +37,7 @@ export default async function AliasPage({
     );
     redirect(link);
   } catch (error) {
-    if ((error as any).digest?.startsWith("NEXT_REDIRECT")) {
+    if ((error as RedirectError).digest?.startsWith("NEXT_REDIRECT")) {
       // This is an intentional redirect, so we throw it to let Next.js handle it
       throw error;
     }

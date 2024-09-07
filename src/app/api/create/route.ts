@@ -12,7 +12,7 @@ export async function POST(request: Request) {
   let baseURL = formData.get("baseURL") as string;
 
   if (!alias) {
-    alias = await GenerateRandomAlias() as unknown as string;
+    alias = (await GenerateRandomAlias()) as unknown as string;
   }
 
   if (!baseURL) {
@@ -29,7 +29,10 @@ export async function POST(request: Request) {
     );
   }
 
-  const checkPassword = compareSync(password, Buffer.from(process.env.PASSWORD_HASH, "base64").toString("utf-8"));
+  const checkPassword = compareSync(
+    password,
+    Buffer.from(process.env.PASSWORD_HASH, "base64").toString("utf-8"),
+  );
   if (!checkPassword) {
     return NextResponse.json(
       { success: false, message: "Invalid password." },
@@ -44,10 +47,16 @@ export async function POST(request: Request) {
 
   try {
     const success = await createRedirect(url, mapped_alias);
-    
+
     if (success != 0) {
       return NextResponse.json(
-        { success: false, message: success === 1 ? "Alias already exists." : "Failed to create redirect." },
+        {
+          success: false,
+          message:
+            success === 1
+              ? "Alias already exists."
+              : "Failed to create redirect.",
+        },
         { status: 500 },
       );
     }

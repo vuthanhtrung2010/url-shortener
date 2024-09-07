@@ -7,13 +7,17 @@
   },
   "scripts": {
     "dev": "next dev",
+    "prebuild": "npm run lint",
     "build": "npm-run-all build:database build:compile",
     "start": "dotenv -c -- next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "build:database": "npx prisma migrate dev --name init",
     "build:compile": "next build",
     "hash": "tsx ./src/tools/PasswordHash.ts",
     "test": "jest"
+  },
+  "overrides": {
+    "eslint": "$eslint"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
@@ -43,17 +47,26 @@
     "validator": "^13.12.0"
   },
   "devDependencies": {
+    "@eslint/compat": "^1.1.1",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.10.0",
     "@types/bcrypt": "^5.0.2",
+    "@types/eslint__js": "^8.42.3",
     "@types/jest": "^29.5.12",
     "@types/node": "^22.5.4",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.2.5",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
     "jest-mock-extended": "^3.0.7",
     "postcss": "^8.4.45",
+    "prettier": "3.3.3",
     "tailwindcss": "^3.4.10",
     "ts-jest": "^29.2.5",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.4.0"
   }
 }

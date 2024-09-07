@@ -34,12 +34,13 @@ export default function Dashboard() {
 
     if (submitButton) {
       submitButton.setAttribute("disabled", "true");
-      submitButton.textContent = `${method.charAt(0).toUpperCase() + method.slice(1)
-        }ing...`.replace(/e([^e]*)$/i, '$1');
+      submitButton.textContent = `${
+        method.charAt(0).toUpperCase() + method.slice(1)
+      }ing...`.replace(/e([^e]*)$/i, "$1");
     }
 
     const response = await fetch(url, {
-      method: 'POST',
+      method: "POST",
       body: formData,
     });
 
@@ -64,7 +65,9 @@ export default function Dashboard() {
       setShowSuccess(true);
       form.reset();
     } else {
-      setMessage(result.message || "An error occurred. Please try again later.");
+      setMessage(
+        result.message || "An error occurred. Please try again later.",
+      );
       setShowSuccess(false);
     }
 
@@ -95,8 +98,9 @@ export default function Dashboard() {
         <div className="space-y-6">
           <div>
             <button
-              className={`${isCreateShown ? "bg-red-700" : "bg-green-600"
-                } hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 mb-6`}
+              className={`${
+                isCreateShown ? "bg-red-700" : "bg-green-600"
+              } hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 mb-6`}
               onClick={() => toggleForm("create")}
             >
               {isCreateShown ? "Close Form" : "Create Redirect"}
@@ -127,8 +131,9 @@ export default function Dashboard() {
 
           <div>
             <button
-              className={`${isUpdateShown ? "bg-red-700" : "bg-yellow-600"
-                } hover:bg-yellow-700 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 mb-6`}
+              className={`${
+                isUpdateShown ? "bg-red-700" : "bg-yellow-600"
+              } hover:bg-yellow-700 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 mb-6`}
               onClick={() => toggleForm("update")}
             >
               {isUpdateShown ? "Close Form" : "Update Redirect"}
@@ -158,8 +163,9 @@ export default function Dashboard() {
           </div>
 
           <button
-            className={`${isDeleteShown ? "bg-red-700" : "bg-red-600"
-              } hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 mb-6`}
+            className={`${
+              isDeleteShown ? "bg-red-700" : "bg-red-600"
+            } hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 mb-6`}
             onClick={() => toggleForm("delete")}
           >
             {isDeleteShown ? "Close Form" : "Delete Redirect"}
@@ -188,7 +194,11 @@ export default function Dashboard() {
         </div>
         {message && (
           <div className="bottom-right space-y-3">
-            {showSuccess ? <SuccessToast message={message} /> : <ErrorToast message={message} />}
+            {showSuccess ? (
+              <SuccessToast message={message} />
+            ) : (
+              <ErrorToast message={message} />
+            )}
           </div>
         )}
       </main>

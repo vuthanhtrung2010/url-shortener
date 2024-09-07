@@ -7,9 +7,7 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/preline/preline.js",
   ],
-  plugins: [
-    require("preline/plugin"),
-  ],
+  plugins: [require("preline/plugin")],
   theme: {
     extend: {
       colors: {

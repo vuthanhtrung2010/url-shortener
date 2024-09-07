@@ -5,6 +5,7 @@ import { isURL } from "validator";
 import { randomBytes } from "node:crypto";
 
 const prisma = new PrismaClient();
+//eslint-disable-next-line
 export const cache = new Map<string, any>();
 
 export default prisma;
@@ -41,7 +42,10 @@ export async function getURL(alias: string): Promise<string | null> {
   }
 }
 
-export async function createRedirect(url: string, aliases: string[]): Promise<number> {
+export async function createRedirect(
+  url: string,
+  aliases: string[],
+): Promise<number> {
   try {
     console.log(
       chalk.blue(
@@ -172,7 +176,7 @@ export async function getData(alias: string) {
 }
 
 export async function GenerateRandomAlias(): Promise<string> {
-  const buf = randomBytes(4).toString('hex');
+  const buf = randomBytes(4).toString("hex");
   const randomAlias: string = buf.substring(0, 8);
   const data = await findUniqueLink(randomAlias);
   if (data) {

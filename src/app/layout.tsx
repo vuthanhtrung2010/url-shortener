@@ -13,13 +13,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Vũ Thành Trung",
     description: "Trung's URL Shortener",
-    images: ["/assets/banner.webp"],
+    images: ["/assets/meta/banner.webp"],
   },
   twitter: {
     title: "Vũ Thành Trung",
     card: "summary_large_image",
     description: "A website which displays my Spotify status.",
-    images: ["/assets/banner.webp"],
+    images: ["/assets/meta/banner.webp"],
   },
 };
 

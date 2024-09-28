@@ -79,6 +79,7 @@ That's why I'm asking everyone to [**donate a little bit of money**](https://ko-
 3. Open the file and choose yes when it asks you to use default URL Shortener is your URL Shortener.
 
 </details>
+
 # Contributing
 
 > If you want to help improve the code, fix spelling or design Errors or if possible even code errors, you may create PULL REQUESTS.

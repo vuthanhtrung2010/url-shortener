@@ -27,7 +27,7 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@million/lint": "1.0.0-rc.84",
     "@prisma/client": "^5.20.0",
-    "@sentry/nextjs": "^8.32.0",
+    "@sentry/nextjs": "^8.33.1",
     "@types/validator": "^13.12.2",
     "bcrypt": "^5.1.1",
     "chalk": "^5.3.0",
@@ -55,7 +55,7 @@
     "@types/eslint__js": "^8.42.3",
     "@types/jest": "^29.5.13",
     "@types/node": "^22.7.4",
-    "@types/react": "^18.3.10",
+    "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
     "eslint": "^9.11.1",
     "eslint-config-next": "14.2.5",
@@ -68,6 +68,6 @@
     "tailwindcss": "^3.4.13",
     "ts-jest": "^29.2.5",
     "typescript": "^5.6.2",
-    "typescript-eslint": "^8.7.0"
+    "typescript-eslint": "^8.8.0"
   }
 }

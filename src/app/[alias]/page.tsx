@@ -8,17 +8,14 @@ interface RedirectError extends Error {
   digest?: string;
 }
 
-export default async function AliasPage({
-  params,
-}: {
-  params: { alias: string };
-}) {
-  const { alias } = params;
+interface PageProps {
+  params: Promise<{
+    alias: string;
+  }>;
+}
 
-  if (!alias) {
-    console.log("Missing alias param");
-    redirect("/");
-  }
+export default async function AliasPage({ params }: Readonly<PageProps>) {
+  const { alias } = await params;
 
   console.log(`Requesting redirect for alias: ${alias}`);
 
@@ -31,9 +28,7 @@ export default async function AliasPage({
     }
 
     console.log(
-      chalk.green(
-        `Found ${link} with alias ${params.alias}! Redirecting user.`,
-      ),
+      chalk.green(`Found ${link} with alias ${alias}! Redirecting user.`),
     );
     redirect(link);
   } catch (error) {

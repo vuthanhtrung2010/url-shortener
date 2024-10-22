@@ -1,9 +1,9 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { createRedirect, GenerateRandomAlias } from "@/data";
 import { compareSync } from "bcrypt";
 import { DATA } from "@/config";
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   const formData = await request.formData();
 
   const password = formData.get("password") as string;

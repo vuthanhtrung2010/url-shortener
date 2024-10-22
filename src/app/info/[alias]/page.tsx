@@ -4,11 +4,13 @@ import moment from "moment";
 import { getData } from "@/data";
 
 interface Props {
-  params: Readonly<{ alias: string }>;
+  params: Promise<{
+    alias: string;
+  }>;
 }
 
 export default async function InfoPage({ params }: Readonly<Props>) {
-  const { alias } = params;
+  const { alias } = await params;
 
   console.log(chalk.blue(`Requesting data for alias: ${alias}`));
   const link = await getData(alias);

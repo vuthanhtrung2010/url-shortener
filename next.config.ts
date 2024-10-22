@@ -1,15 +1,12 @@
 import MillionLint from "@million/lint";
 import { withSentryConfig } from "@sentry/nextjs";
-/** @type {import('next').NextConfig} */
+import type { NextConfig } from "next";
 
-const nextConfig = {
+const nextConfig: NextConfig = {
   logging: {
     fetches: {
       fullUrl: true,
     },
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
   },
   async headers() {
     return [
@@ -29,7 +26,6 @@ const nextConfig = {
       },
     ];
   },
-  swcMinify: true,
   reactStrictMode: true,
 };
 
@@ -64,6 +60,5 @@ export default MillionLint.next({
     // https://docs.sentry.io/product/crons/
     // https://vercel.com/docs/cron-jobs
     automaticVercelMonitors: true,
-    silent: true,
   }),
 );

@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@edge-csrf/nextjs':
-        specifier: ^2.5.0
-        version: 2.5.0(next@15.0.0(@babel/core@7.25.8)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@fortawesome/fontawesome-svg-core':
         specifier: ^6.6.0
         version: 6.6.0
@@ -360,11 +357,6 @@ packages:
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
     engines: {node: '>=12'}
-
-  '@edge-csrf/nextjs@2.5.0':
-    resolution: {integrity: sha512-LtoGc9140kowaT7df8P3umU0VMfmueZPeAxb4hsJGUVyq6GBaots23sx9UtXz4+TiFhLcSs3n35I6zwEI6DHgQ==}
-    peerDependencies:
-      next: ^13.0.0 || ^14.0.0
 
   '@emnapi/runtime@1.3.1':
     resolution: {integrity: sha512-kEBmG8KyqtxJZv+ygbEim+KCGtIq1fC22Ms3S4ziXmYKm8uyoLX0MHONVKwp+9opg390VaKRNt4a7A9NwmpNhw==}
@@ -4734,10 +4726,6 @@ snapshots:
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
-
-  '@edge-csrf/nextjs@2.5.0(next@15.0.0(@babel/core@7.25.8)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
-    dependencies:
-      next: 15.0.0(@babel/core@7.25.8)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
   '@emnapi/runtime@1.3.1':
     dependencies:

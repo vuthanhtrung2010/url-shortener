@@ -13,6 +13,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/", "/dashboard"],
       },
     ],
-    sitemap: "https://links.trung.is-a.dev/sitemap.xml",
+    sitemap: "https://links.devtrung.tech/sitemap.xml",
   };
 }

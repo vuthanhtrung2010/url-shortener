@@ -27,6 +27,12 @@ const nextConfig: NextConfig = {
     ];
   },
   reactStrictMode: true,
+  webpack(config, { isServer }) {
+    if (!isServer) {
+      config.devtool = "hidden-source-map";
+    }
+    return config;
+  },
 };
 
 export default MillionLint.next({

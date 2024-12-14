@@ -54,6 +54,7 @@ export default MillionLint.next({
     sourcemaps: {
       deleteSourcemapsAfterUpload: true,
     },
+
     // Automatically tree-shake Sentry logger statements to reduce bundle size
     disableLogger: true,
     // Enables automatic instrumentation of Vercel Cron Monitors. (Does not yet work with App Router route handlers.)

@@ -25,6 +25,8 @@
     "@prisma/client": "^6.2.1",
     "@sentry/nextjs": "^8.51.0",
     "@types/validator": "^13.12.2",
+    "@vercel/analytics": "^1.4.1",
+    "@vercel/speed-insights": "^1.1.0",
     "bcrypt": "^5.1.1",
     "chalk": "^5.4.1",
     "dotenv-cli": "^7.4.4",

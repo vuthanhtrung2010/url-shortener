@@ -1,36 +1,30 @@
 import { PrismaClient } from "@prisma/client";
-import { Redis } from "@upstash/redis";
 import chalk from "chalk";
 import * as Sentry from "@sentry/nextjs";
 import { isURL } from "validator";
 import { randomBytes } from "node:crypto";
 
 const prisma = new PrismaClient();
-const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_REST_URL!,
-  token: process.env.UPSTASH_REDIS_REST_TOKEN!,
-});
+//eslint-disable-next-line
+export const cache = new Map<string, any>();
 
-// Helper function to find a unique link using Redis as a cache
+export default prisma;
+
+// Helper function to find a unique link
 async function findUniqueLink(alias: string) {
-  const cacheKey = `alias:${alias}`;
-  const cachedData = await redis.get(cacheKey);
-
-  if (typeof cachedData === "string") {
-    return JSON.parse(cachedData);
+  if (cache.has(alias)) {
+    return cache.get(alias);
+  } else {
+    const result = await prisma.links.findUnique({ where: { alias } });
+    cache.set(alias, result);
+    return result;
   }
-
-  const result = await prisma.links.findUnique({ where: { alias } });
-  if (result) {
-    await redis.set(cacheKey, JSON.stringify(result), { ex: 3600 });
-  }
-
-  return result;
 }
 
 export async function getURL(alias: string): Promise<string | null> {
   try {
     const result = await findUniqueLink(alias);
+
     if (!result) {
       console.log(chalk.red(`No record found for alias: ${alias}`));
       return null;
@@ -40,11 +34,6 @@ export async function getURL(alias: string): Promise<string | null> {
       where: { alias },
       data: { hits: { increment: 1 } },
     });
-
-    const updated = await prisma.links.findUnique({ where: { alias } });
-    if (updated) {
-      await redis.set(`alias:${alias}`, JSON.stringify(updated), { ex: 3600 });
-    }
 
     return result.link;
   } catch (error) {
@@ -82,7 +71,7 @@ export async function createRedirect(
         const data = await prisma.links.create({
           data: { link: url, alias, hits: 0 },
         });
-        await redis.set(`alias:${alias}`, JSON.stringify(data), { ex: 3600 });
+        cache.set(alias, data);
       } catch (e) {
         console.error(e);
         Sentry.captureException(e);
@@ -129,7 +118,7 @@ export async function updateRedirect(url: string, aliases: string[]) {
           where: { alias },
           data: { link: url },
         });
-        await redis.set(`alias:${alias}`, JSON.stringify(data), { ex: 3600 });
+        cache.set(alias, data);
       } catch (e) {
         console.error(e);
         Sentry.captureException(e);
@@ -155,8 +144,9 @@ export async function deleteRedirect(aliases: string[]) {
     for (const alias of aliases) {
       const data = await findUniqueLink(alias);
       if (!data) continue;
+
       await prisma.links.delete({ where: { alias } });
-      await redis.del(`alias:${alias}`);
+      cache.delete(alias);
       count++;
     }
 
@@ -189,12 +179,8 @@ export async function GenerateRandomAlias(): Promise<string> {
   const buf = randomBytes(4).toString("hex");
   const randomAlias: string = buf.substring(0, 8);
   const data = await findUniqueLink(randomAlias);
-
   if (data) {
     return GenerateRandomAlias();
   }
-
   return randomAlias;
 }
-
-export default prisma;

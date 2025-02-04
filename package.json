@@ -25,7 +25,6 @@
     "@prisma/client": "^6.3.0",
     "@sentry/nextjs": "^8.53.0",
     "@types/validator": "^13.12.2",
-    "@upstash/redis": "^1.34.3",
     "@vercel/analytics": "^1.4.1",
     "@vercel/speed-insights": "^1.1.0",
     "bcrypt": "^5.1.1",

@@ -180,4 +180,4 @@ export async function GenerateRandomAlias(): Promise<string> {
   return randomAlias;
 }
 
-export { prisma };
+export default prisma;

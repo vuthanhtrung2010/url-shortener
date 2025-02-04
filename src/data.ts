@@ -35,14 +35,17 @@ export async function getURL(alias: string): Promise<string | null> {
       console.log(chalk.red(`No record found for alias: ${alias}`));
       return null;
     }
+
     await prisma.links.update({
       where: { alias },
       data: { hits: { increment: 1 } },
     });
+
     const updated = await prisma.links.findUnique({ where: { alias } });
     if (updated) {
       await redis.set(`alias:${alias}`, JSON.stringify(updated), { ex: 3600 });
     }
+
     return result.link;
   } catch (error) {
     console.error("Error getting URL:", error);
@@ -60,6 +63,7 @@ export async function createRedirect(
         `Requested creating ${url} with aliases ${aliases.join(", ")}.`,
       ),
     );
+
     for (const alias of aliases) {
       const data = await findUniqueLink(alias);
       if (data) {
@@ -67,10 +71,12 @@ export async function createRedirect(
         return 1;
       }
     }
+
     if (!isURL(url)) {
       console.log(chalk.red("Invalid URL."), url);
       return 2;
     }
+
     for (const alias of aliases) {
       try {
         const data = await prisma.links.create({
@@ -82,9 +88,11 @@ export async function createRedirect(
         Sentry.captureException(e);
       }
     }
+
     console.log(
       chalk.green(`Created: ${url} with aliases ${aliases.join(", ")}.`),
     );
+
     return 0;
   } catch (error) {
     console.error("Error creating redirect:", error);
@@ -99,6 +107,7 @@ export async function updateRedirect(url: string, aliases: string[]) {
         `Requested updating ${url} with aliases ${aliases.join(", ")}.`,
       ),
     );
+
     for (const alias of aliases) {
       const data = await findUniqueLink(alias);
       if (!data) {
@@ -108,10 +117,12 @@ export async function updateRedirect(url: string, aliases: string[]) {
         return;
       }
     }
+
     if (!isURL(url)) {
       console.log(chalk.red("Invalid URL."));
       return;
     }
+
     for (const alias of aliases) {
       try {
         const data = await prisma.links.update({
@@ -124,6 +135,7 @@ export async function updateRedirect(url: string, aliases: string[]) {
         Sentry.captureException(e);
       }
     }
+
     console.log(chalk.green(`Updated: ${aliases.join(", ")} with URL ${url}.`));
   } catch (error) {
     console.error("Error updating redirect:", error);
@@ -138,6 +150,7 @@ export async function deleteRedirect(aliases: string[]) {
         `Requested deleting all URLs with aliases: ${aliases.join(", ")}.`,
       ),
     );
+
     let count = 0;
     for (const alias of aliases) {
       const data = await findUniqueLink(alias);
@@ -146,12 +159,14 @@ export async function deleteRedirect(aliases: string[]) {
       await redis.del(`alias:${alias}`);
       count++;
     }
+
     if (count === 0) {
       console.log(
         chalk.red(`Cannot find existing URLs from ${aliases.join(", ")}.`),
       );
       return;
     }
+
     console.log(
       chalk.green(`Deleted ${count} URLs with aliases: ${aliases.join(", ")}.`),
     );
@@ -174,9 +189,11 @@ export async function GenerateRandomAlias(): Promise<string> {
   const buf = randomBytes(4).toString("hex");
   const randomAlias: string = buf.substring(0, 8);
   const data = await findUniqueLink(randomAlias);
+
   if (data) {
     return GenerateRandomAlias();
   }
+
   return randomAlias;
 }
 

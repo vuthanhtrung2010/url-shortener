@@ -13,10 +13,12 @@ export default prisma;
 // Helper function to find a unique link
 async function findUniqueLink(alias: string) {
   if (cache.has(alias)) {
+    console.log("Cache hit!");
     return cache.get(alias);
   } else {
     const result = await prisma.links.findUnique({ where: { alias } });
     cache.set(alias, result);
+    console.log("Cache miss!");
     return result;
   }
 }

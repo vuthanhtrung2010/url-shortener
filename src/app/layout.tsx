@@ -42,7 +42,7 @@ export default function RootLayout({
             </a>
           </div>
           <div className="space-y-0">
-            <p>&copy; 2024 Trung - All Rights Reserved.</p>
+            <p>&copy; 2025 Trung - All Rights Reserved.</p>
           </div>
         </div>
       </body>

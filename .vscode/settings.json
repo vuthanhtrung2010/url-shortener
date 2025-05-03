@@ -3,5 +3,7 @@
         "connectionId": "vuthanhtrung2010",
         "projectKey": "vuthanhtrung2010_url-shortener"
     },
-    "deepscan.enable": true
+    "deepscan.enable": true,
+    "IDX.aI.enableInlineCompletion": true,
+    "IDX.aI.enableCodebaseIndexing": true
 }

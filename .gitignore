@@ -43,3 +43,6 @@ next-env.d.ts
 .sentryclirc
 # Million Lint
 .million
+
+# Google firebase studio
+/.idx

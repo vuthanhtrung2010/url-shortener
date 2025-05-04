@@ -1,4 +1,4 @@
-import MillionLint from "@million/lint";
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:1803328553.
 import { withSentryConfig } from "@sentry/nextjs";
 import type { NextConfig } from "next";
 
@@ -35,10 +35,7 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default MillionLint.next({
-  rsc: true,
-})(
-  withSentryConfig(nextConfig, {
+export default withSentryConfig(nextConfig, {
     // For all available options, see:
     // https://github.com/getsentry/sentry-webpack-plugin#options
 
@@ -68,5 +65,4 @@ export default MillionLint.next({
     // https://docs.sentry.io/product/crons/
     // https://vercel.com/docs/cron-jobs
     automaticVercelMonitors: true,
-  }),
-);
+  });

@@ -6,7 +6,7 @@
     "node": ">=20.9.0 <21.0.0 || >=22.11.0"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "npm-run-all build:database build:compile",
     "start": "dotenv -c -- next start",
     "lint": "next lint",

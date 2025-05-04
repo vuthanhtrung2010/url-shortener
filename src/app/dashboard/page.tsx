@@ -61,12 +61,12 @@ export default function Dashboard() {
     }
 
     if (responseOk) {
-      setMessage(result.message || successMessage);
+      setMessage(result.message ?? successMessage);
       setShowSuccess(true);
       form.reset();
     } else {
       setMessage(
-        result.message || "An error occurred. Please try again later.",
+        result.message ?? "An error occurred. Please try again later.",
       );
       setShowSuccess(false);
     }

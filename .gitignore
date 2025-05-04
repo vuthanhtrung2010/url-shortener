@@ -46,3 +46,6 @@ next-env.d.ts
 
 # Google firebase studio
 /.idx
+
+# Firebase debug file
+firebase-debug.log

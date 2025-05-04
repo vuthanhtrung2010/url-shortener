@@ -2,8 +2,7 @@
   "name": "url-shortnener",
   "version": "2.0.0",
   "type": "module",
-  "engines": {
-  },
+  "engines": {},
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "npm-run-all build:database build:compile",
@@ -23,8 +22,6 @@
     "@prisma/client": "^6.7.0",
     "@sentry/nextjs": "^8.55.0",
     "@types/validator": "^13.15.0",
-    "@vercel/analytics": "^1.5.0",
-    "@vercel/speed-insights": "^1.2.0",
     "bcrypt": "^5.1.1",
     "chalk": "^5.4.1",
     "dotenv-cli": "^7.4.4",

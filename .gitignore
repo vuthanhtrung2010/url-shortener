@@ -49,3 +49,6 @@ next-env.d.ts
 
 # Firebase debug file
 firebase-debug.log
+
+# Prisma client generator
+src/generated

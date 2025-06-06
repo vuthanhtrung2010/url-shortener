@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from "@/generated/prisma/client";
 import chalk from "chalk";
 import * as Sentry from "@sentry/nextjs";
 import { isURL } from "validator";

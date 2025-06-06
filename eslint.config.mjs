@@ -23,7 +23,7 @@ const config = [
   ...patchedConfig,
   ...ts.configs.recommended,
   prettierConfigRecommended,
-  { ignores: [".next/*", "tailwind.config.ts"] },
+  { ignores: [".next/*", "tailwind.config.ts", "src/generated/prisma"] },
 ];
 
 export default config;

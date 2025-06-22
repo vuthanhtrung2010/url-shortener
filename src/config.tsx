@@ -5,13 +5,13 @@ export const DATA = {
     {
       name: "Personal Website",
       target: "/website",
-      description: "devtrung.tech",
+      description: "trunghsgs.edu.vn",
       icon: "/assets/links/dev.webp",
     },
     {
       name: "Bots List",
       target: "/botlist",
-      description: "bots.devtrung.tech",
+      description: "bots.trunghsgs.edu.vn",
       icon: "/assets/links/dev.webp",
     },
     {
@@ -35,9 +35,9 @@ export const DATA = {
     {
       name: "Status",
       target: "/status",
-      description: "status.devtrung.tech",
+      description: "status.trunghsgs.edu.vn",
       icon: "/assets/links/status.webp",
     },
   ],
-  baseURL: "https://links.devtrung.tech",
+  baseURL: "https://links.trunghsgs.edu.vn",
 } as const;

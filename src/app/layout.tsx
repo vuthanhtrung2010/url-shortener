@@ -7,7 +7,7 @@ import { DATA } from "@/config";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(DATA.baseURL || "https://links.devtrung.tech"),
+  metadataBase: new URL(DATA.baseURL || "https://links.trunghsgs.edu.vn"),
   title: "Trung's URL Shortener",
   description: "Trung's URL Shortener",
   openGraph: {

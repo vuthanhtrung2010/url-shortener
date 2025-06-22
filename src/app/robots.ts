@@ -13,6 +13,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/", "/dashboard"],
       },
     ],
-    sitemap: "https://links.devtrung.tech/sitemap.xml",
+    sitemap: "https://links.trunghsgs.edu.vn/sitemap.xml",
   };
 }

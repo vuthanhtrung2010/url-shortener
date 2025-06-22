@@ -65,7 +65,7 @@ That's why I'm asking everyone to [**donate a little bit of money**](https://ko-
    - `name` fill your name. Make sure it is sort.
    - `profilePicture` the link to your profile picture, default profile picture is in `./public/assets/pfp.webp`. If you have different file name/extension after uploading, replace it.
    - `links` is all your links with the image, image located at `./public/assets/links`. Put your files there and replace the sub variable.
-   - `baseURL` your base URL. Must be filled in to prevent error. You could use ShareX to shorten your URL too! Put it as your main route. Eg: `https://links.devtrung.tech`, `https://links.devtrung.tech/` **NOT** `https://yourdomain.com/sth`.
+   - `baseURL` your base URL. Must be filled in to prevent error. You could use ShareX to shorten your URL too! Put it as your main route. Eg: `https://links.trunghsgs.edu.vn`, `https://links.trunghsgs.edu.vn/` **NOT** `https://yourdomain.com/sth`.
 
 </details>
 
@@ -75,7 +75,7 @@ That's why I'm asking everyone to [**donate a little bit of money**](https://ko-
   <summary>Click to expand</summary>
 
 1. Get ShareX from https://getsharex.com/
-2. Change the line have variable `RequestURL` your real URL. Eg: `https://links.devtrung.tech/api/create`.
+2. Change the line have variable `RequestURL` your real URL. Eg: `https://links.trunghsgs.edu.vn/api/create`.
 3. Open the file and choose yes when it asks you to use default URL Shortener is your URL Shortener.
 
 </details>

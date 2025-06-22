@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
   }
 
   if (!baseURL) {
-    baseURL = DATA.baseURL || "https://links.devtrung.tech";
+    baseURL = DATA.baseURL || "https://links.trunghsgs.edu.vn";
   }
 
   if (!process.env.PASSWORD_HASH) {

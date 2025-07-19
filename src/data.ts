@@ -1,6 +1,5 @@
 import { PrismaClient } from "@/generated/prisma/client";
 import chalk from "chalk";
-import * as Sentry from "@sentry/nextjs";
 import { isURL } from "validator";
 import { randomBytes } from "node:crypto";
 
@@ -76,7 +75,6 @@ export async function createRedirect(
         cache.set(alias, data);
       } catch (e) {
         console.error(e);
-        Sentry.captureException(e);
       }
     }
 
@@ -123,7 +121,6 @@ export async function updateRedirect(url: string, aliases: string[]) {
         cache.set(alias, data);
       } catch (e) {
         console.error(e);
-        Sentry.captureException(e);
       }
     }
 

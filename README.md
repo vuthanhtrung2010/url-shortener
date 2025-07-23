@@ -38,9 +38,9 @@ That's why I'm asking everyone to [**donate a little bit of money**](https://ko-
 
 **NOTE:** _You can do the exact same configuration inside of the `.env.example` file, just make sure to rename it to `.env` or use environment variables!_
 
-1.  Ensure that you have installed all node modules by running `pnpm i`
+1.  Ensure that you have installed all node modules by running `bun i`
 2.  Ensure that you have renamed `.env.example` to `.env` and added environment variables
-3.  Now run `pnpm run build` then run `pnpm start` or `pnpm start` or `pm2 start pnpm --name URL-Shortener -- start` if you using a VPS to run the website as production mode. You can also run the website as developer mode by `pnpm run dev` or `pm2 start "pnpm run dev" --name URL-Shortener`. Might add `npx` to the prefix of `pm2` if you are not using the runtime version!
+3.  Now run `bun run build` then run `bun start` or `bun start` or `pm2 start bun --name URL-Shortener -- start` if you using a VPS to run the website as production mode. You can also run the website as developer mode by `bun run dev` or `pm2 start "bun run dev" --name URL-Shortener`. Might add `bunx`/`npx` to the prefix of `pm2` if you are not using the runtime version!
 4.  Now go to the `/login` route and login to your Spotify Account!
 5.  Enjoy!
 
@@ -55,11 +55,9 @@ That's why I'm asking everyone to [**donate a little bit of money**](https://ko-
 
 1. `./.env`
 
-   - `DATABASE_URL` get from your self hosted database. See full list of supported database by prisma ORM [here](https://www.prisma.io/docs/orm/reference/supported-databases).
-   - `PASSWORD_HASH` your hased desired password for `/dashboard` to create/update/delete URLs, do `pnpm run hash` or `pnpm hash` and type your password, fill in the variable to the variable named `PASSWORD_HASH` in `.env` file.
+   - `DATABASE_URL` get from your self hosted PostgreSQL database.
+   - `PASSWORD_HASH` your hased desired password for `/dashboard` to create/update/delete URLs, do `bun run hash` and type your password, fill in the variable to the variable named `ADMIN_PASSWORD_HASH` in `.env` file.
    - `PORT` is your port number the website listening to. Default listening port will be 3000.
-   - `SENTRY_AUTH_TOKEN` (optional for who want to track errors/performance): Get it from [Sentry Dashboard](https://sentry.io/settings/auth-tokens/).
-   - `SENTRY_DSN_ADDRESS` (optional for who want to track errors/performance): Get it from your Sentry project.
 
 2. `./src/config.tsx`
    - `name` fill your name. Make sure it is sort.
